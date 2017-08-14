@@ -1,0 +1,13 @@
+.mainComponent {
+    
+    position: fixed;
+    top: 50px;
+    bottom:80px;
+
+    width: 90vw;
+    margin-left:5vw;
+
+    color:white;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}

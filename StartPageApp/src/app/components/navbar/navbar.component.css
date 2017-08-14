@@ -1,0 +1,40 @@
+.navMenu {
+  display: inline-block;
+  position: fixed;
+  bottom: 25px;
+  left: 50px;
+  padding: 10px;
+  border-radius: 20px; 
+  
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+}
+
+.fa {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.sidebarTitle {
+  background: #4285f4 !important;
+  color: white !important;
+  text-align: center;
+}
+
+.favBtn {
+  color:white;
+}
+
+.favBtn:hover {
+  color:#fbbc05;
+  cursor: pointer;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #4285f4;
+}  
