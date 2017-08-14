@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DragulaModule } from 'ng2-dragula/ng2-dragula';
+
 
 import { Route } from './app.routes';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FocusComponent } from './components/focus/focus.component';
@@ -11,6 +12,8 @@ import { ApplicationsComponent } from './components/applications/applications.co
 import { SettingComponent } from './components/setting/setting.component';
 import { TimeComponent } from './components/time/time.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   imports: [
     BrowserModule,
     FormsModule,
-    Route
+    Route,
+    DragulaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
