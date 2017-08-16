@@ -1,7 +1,37 @@
 .testBox {
     text-align: center;
-    height: 150px;
-    line-height: 150px;
-    background-color: rgba(255,255,255,0.2);
 
+    background-color: rgba(255,255,255,0.2);
+    min-width: 150px;
+    height: calc( (100vh - 130px)*0.25 );
+
+}
+
+.mainIconContainer {
+
+    position: fixed;
+    top: 50px;
+    bottom:80px;
+
+    margin-top: 0 !important;
+
+    width: 90vw;
+    margin-left:5vw;
+    margin-right:5vw;
+    min-width: 500px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    color:white;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.hide {
+    display: none !important;
+}
+
+[hidden] { 
+    display: none !important; 
+    max-height: 0px;
 }

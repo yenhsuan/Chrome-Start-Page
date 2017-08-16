@@ -1,22 +1,11 @@
 <div class="navMenu">
 
   <i class="fa fa-star favBtn" aria-hidden="true" (click)="triggerFavPanel()"></i>
-  
-  <a [routerLink]="['/home']">
-    <i class="fa fa-home" aria-hidden="true"></i>
-  </a>
-  
-  <a [routerLink]="['/apps']">
-    <i class="fa fa-windows" aria-hidden="true"></i>
-  </a>
-  
-  <a [routerLink]="['/focus']">
-    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-  </a>
+  <i class="fa fa-home" aria-hidden="true" (click)="this.gcRouter.navigateTo('home')"></i>
+  <i class="fa fa-windows" aria-hidden="true" (click)="this.gcRouter.navigateTo('applications')"></i>
+  <i class="fa fa-dot-circle-o" aria-hidden="true" (click)="this.gcRouter.navigateTo('focus')"></i>
+  <i class="fa fa-cog" aria-hidden="true" (click)="this.gcRouter.navigateTo('setting')"></i>
 
-  <a [routerLink]="['/setting']">
-    <i class="fa fa-cog" aria-hidden="true"></i>
-  </a>
 </div>
 
 <div class="ui sidebar menu vertical wide">

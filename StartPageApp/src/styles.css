@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body, body.pushable > .pusher {
-  background: url("http://www.elementaryos-fr.org/wp-content/uploads/2013/09/wallpaper-2106990.jpg") no-repeat center center fixed;
+  background: url("/assets/defaultWallpaper.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

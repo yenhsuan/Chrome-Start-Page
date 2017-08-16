@@ -1,6 +1,5 @@
-
-<div class="mainComponent">
-  <router-outlet></router-outlet>
-</div>
-
+<app-home *ngIf="viewToDisplay == 'home'"></app-home>
+<app-focus *ngIf="viewToDisplay == 'focus'"></app-focus>
+<app-setting *ngIf="viewToDisplay == 'setting'"></app-setting>
+<app-applications *ngIf="viewToDisplay == 'applications'"></app-applications>
 <app-navbar></app-navbar>

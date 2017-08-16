@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 declare let $: any;
 
 @Component({
@@ -8,7 +8,7 @@ declare let $: any;
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject('gcRouter') private gcRouter) { }
 
   ngOnInit() {
   }

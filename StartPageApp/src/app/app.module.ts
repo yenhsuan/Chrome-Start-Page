@@ -13,7 +13,9 @@ import { SettingComponent } from './components/setting/setting.component';
 import { TimeComponent } from './components/time/time.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
+import { ChromeRouterService} from './services/chrome-router.service';
 
+import { MouseWheelDirective } from './mousewheel.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ApplicationsComponent,
     SettingComponent,
     TimeComponent,
-    NavbarComponent
+    NavbarComponent,
+    MouseWheelDirective
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     Route,
     DragulaModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'gcRouter',
+      useClass: ChromeRouterService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,19 +22,16 @@
   text-align: center;
 }
 
-.favBtn {
-  color:white;
-}
-
-.favBtn:hover {
-  color:#fbbc05;
-  cursor: pointer;
-}
-
-a {
+.navMenu i {
   color: white;
 }
 
-a:hover {
+.navMenu i:hover {
   color: #4285f4;
-}  
+  cursor: pointer;
+}
+
+.favBtn:hover {
+  color: #fbbc05 !important;
+  cursor: pointer;
+}
