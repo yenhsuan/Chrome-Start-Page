@@ -14,6 +14,7 @@ import { TimeComponent } from './components/time/time.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { ChromeRouterService} from './services/chrome-router.service';
+import { DataService} from './services/data.service';
 
 import { MouseWheelDirective } from './mousewheel.directive';
 
@@ -38,6 +39,10 @@ import { MouseWheelDirective } from './mousewheel.directive';
     {
       provide: 'gcRouter',
       useClass: ChromeRouterService
+    },
+    {
+      provide: 'data',
+      useClass: DataService
     }
   ],
   bootstrap: [AppComponent]
