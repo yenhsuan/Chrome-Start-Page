@@ -1,11 +1,32 @@
 .testBox {
     text-align: center;
-
-    background-color: rgba(255,255,255,0.2);
+    align-items: center;
+    /*background-color: rgba(255,255,255,0.2);*/
     min-width: 150px;
     height: calc( (100vh - 130px)*0.25 );
-
+    min-height: 150px;
 }
+
+
+.iconDiv {
+    text-align: center;
+    align-items: center;
+    /*background-color: rgba(0,0,0,0.2);*/
+    min-width: 150px;
+    height: calc( (100vh - 130px)*0.25 );
+    min-height: 150px;
+}
+
+.bordered {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 20px;
+    border: none !important;
+}
+
+.iconCase {
+    /*background-color: rgba(0,0,0,0.2);*/
+}
+
 
 .mainIconContainer {
 
@@ -15,16 +36,16 @@
 
     margin-top: 0 !important;
 
-    width: 90vw;
-    margin-left:5vw;
-    margin-right:5vw;
+    width: 80vw;
+    margin-left:10vw;
+    margin-right:10vw;
     min-width: 500px;
     overflow-y: hidden;
     overflow-x: hidden;
 
     color:white;
-    align-items: center;
-    background-color: rgba(0,0,0,0.5);
+    
+    /*background-color: rgba(0,0,0,0.5);*/
 }
 
 .hide {
@@ -35,3 +56,25 @@
     display: none !important; 
     max-height: 0px;
 }
+
+.icon {
+    display:block;
+    margin: 0 auto;
+    width: 40%;
+/*    box-shadow: 2px 2px rgba(0,0,0,0.3);
+    -moz-box-shadow: 2px 2px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 2px 2px rgba(0,0,0,0.3); 
+    -o-box-shadow: 2px 2px rgba(0,0,0,0.3);*/
+    /*border-radius:100px;*/
+}
+
+.iconText {
+    display:inline-block;
+    margin: 10px auto;
+    color: white;
+    background-color: rgba(0,0,0,0.6);
+    padding: 5px 10px 5px 10px;
+    border-radius: 15px;
+}
+
+

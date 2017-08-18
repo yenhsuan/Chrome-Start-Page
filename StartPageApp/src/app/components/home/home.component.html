@@ -1,4 +1,16 @@
-<div mouseWheel class="mainIconContainer ui five column grid centered" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)"  [hidden]=" show!==1" (mouseWheelDown)="mouseWheelDownFunc(event)">
+
+<div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)" [hidden]=" show !==1 " (mouseWheelDown)="mouseWheelDownFunc(event)">
+  <div class="column"  *ngFor="let icon of iconData">
+      <div class="iconDiv">
+        <a href={{icon.url}}><div><img class="ui middle aligned tiny image bordered" [src]="icon.iconUrl" /></div></a>
+        <div class="iconText">{{icon.name}}</div>
+      </div>
+  </div>
+</div>
+
+
+
+<div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)"  [hidden]=" show!==2" (mouseWheelDown)="mouseWheelDownFunc(event)">
   <div class="column ">
     <div class=testBox>1</div>
   </div>
@@ -59,69 +71,6 @@
     <div class=testBox>15</div>
   </div>
 </div>
-
-<div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)" [hidden]=" show !==2 " (mouseWheelDown)="mouseWheelDownFunc(event)">
-  <div class="column ">
-    <div class=testBox>a</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>b</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>3</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>4</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>5</div>
-  </div>
-  
-  <div class="column ">
-    <div class=testBox>6</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>7</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>8</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>9</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>10</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>11</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>12</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>13</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>14</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>15</div>
-  </div>
-</div>
-
 
 
 <div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)" [hidden]=" show !==3 " (mouseWheelDown)="mouseWheelDownFunc(event)">

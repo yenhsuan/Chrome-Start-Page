@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { DragulaModule } from 'ng2-dragula/ng2-dragula';
 
 
-import { Route } from './app.routes';
+//import { Route } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FocusComponent } from './components/focus/focus.component';
@@ -32,7 +32,7 @@ import { MouseWheelDirective } from './mousewheel.directive';
   imports: [
     BrowserModule,
     FormsModule,
-    Route,
+    // Route,
     DragulaModule
   ],
   providers: [

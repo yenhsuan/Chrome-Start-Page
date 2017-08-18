@@ -94,17 +94,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_dragula_ng2_dragula__ = __webpack_require__("../../../../ng2-dragula/ng2-dragula.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_dragula_ng2_dragula___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng2_dragula_ng2_dragula__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routes__ = __webpack_require__("../../../../../src/app/app.routes.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_focus_focus_component__ = __webpack_require__("../../../../../src/app/components/focus/focus.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_applications_applications_component__ = __webpack_require__("../../../../../src/app/components/applications/applications.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_setting_setting_component__ = __webpack_require__("../../../../../src/app/components/setting/setting.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_time_time_component__ = __webpack_require__("../../../../../src/app/components/time/time.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_chrome_router_service__ = __webpack_require__("../../../../../src/app/services/chrome-router.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__services_data_service__ = __webpack_require__("../../../../../src/app/services/data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__mousewheel_directive__ = __webpack_require__("../../../../../src/app/mousewheel.directive.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_focus_focus_component__ = __webpack_require__("../../../../../src/app/components/focus/focus.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_applications_applications_component__ = __webpack_require__("../../../../../src/app/components/applications/applications.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_setting_setting_component__ = __webpack_require__("../../../../../src/app/components/setting/setting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_time_time_component__ = __webpack_require__("../../../../../src/app/components/time/time.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_chrome_router_service__ = __webpack_require__("../../../../../src/app/services/chrome-router.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__services_data_service__ = __webpack_require__("../../../../../src/app/services/data.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__mousewheel_directive__ = __webpack_require__("../../../../../src/app/mousewheel.directive.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -116,7 +115,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
+//import { Route } from './app.routes';
 
 
 
@@ -135,83 +134,36 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__components_focus_focus_component__["a" /* FocusComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_applications_applications_component__["a" /* ApplicationsComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_setting_setting_component__["a" /* SettingComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_time_time_component__["a" /* TimeComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__mousewheel_directive__["a" /* MouseWheelDirective */]
+            __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_6__components_focus_focus_component__["a" /* FocusComponent */],
+            __WEBPACK_IMPORTED_MODULE_7__components_applications_applications_component__["a" /* ApplicationsComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__components_setting_setting_component__["a" /* SettingComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_time_time_component__["a" /* TimeComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_navbar_navbar_component__["a" /* NavbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__mousewheel_directive__["a" /* MouseWheelDirective */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__app_routes__["a" /* Route */],
+            // Route,
             __WEBPACK_IMPORTED_MODULE_3_ng2_dragula_ng2_dragula__["DragulaModule"]
         ],
         providers: [
             {
                 provide: 'gcRouter',
-                useClass: __WEBPACK_IMPORTED_MODULE_12__services_chrome_router_service__["a" /* ChromeRouterService */]
+                useClass: __WEBPACK_IMPORTED_MODULE_11__services_chrome_router_service__["a" /* ChromeRouterService */]
             },
             {
                 provide: 'data',
-                useClass: __WEBPACK_IMPORTED_MODULE_13__services_data_service__["a" /* DataService */]
+                useClass: __WEBPACK_IMPORTED_MODULE_12__services_data_service__["a" /* DataService */]
             }
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.routes.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_focus_focus_component__ = __webpack_require__("../../../../../src/app/components/focus/focus.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_applications_applications_component__ = __webpack_require__("../../../../../src/app/components/applications/applications.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_setting_setting_component__ = __webpack_require__("../../../../../src/app/components/setting/setting.component.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Route; });
-
-
-
-
-
-var route = [
-    {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-    },
-    {
-        path: 'focus',
-        component: __WEBPACK_IMPORTED_MODULE_2__components_focus_focus_component__["a" /* FocusComponent */]
-    },
-    {
-        path: 'home',
-        component: __WEBPACK_IMPORTED_MODULE_1__components_home_home_component__["a" /* HomeComponent */]
-    },
-    {
-        path: 'apps',
-        component: __WEBPACK_IMPORTED_MODULE_3__components_applications_applications_component__["a" /* ApplicationsComponent */]
-    },
-    {
-        path: 'setting',
-        component: __WEBPACK_IMPORTED_MODULE_4__components_setting_setting_component__["a" /* SettingComponent */]
-    },
-    {
-        path: '**',
-        redirectTo: 'home'
-    },
-];
-var Route = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(route);
-//# sourceMappingURL=app.routes.js.map
 
 /***/ }),
 
@@ -345,7 +297,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".testBox {\n    text-align: center;\n\n    background-color: rgba(255,255,255,0.2);\n    min-width: 150px;\n    height: calc( (100vh - 130px)*0.25 );\n\n}\n\n.mainIconContainer {\n\n    position: fixed;\n    top: 50px;\n    bottom:80px;\n\n    margin-top: 0 !important;\n\n    width: 90vw;\n    margin-left:5vw;\n    margin-right:5vw;\n    min-width: 500px;\n    overflow-y: hidden;\n    overflow-x: hidden;\n\n    color:white;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    background-color: rgba(0,0,0,0.5);\n}\n\n.hide {\n    display: none !important;\n}\n\n[hidden] { \n    display: none !important; \n    max-height: 0px;\n}\n", ""]);
+exports.push([module.i, ".testBox {\n    text-align: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    /*background-color: rgba(255,255,255,0.2);*/\n    min-width: 150px;\n    height: calc( (100vh - 130px)*0.25 );\n    min-height: 150px;\n}\n\n\n.iconDiv {\n    text-align: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    /*background-color: rgba(0,0,0,0.2);*/\n    min-width: 150px;\n    height: calc( (100vh - 130px)*0.25 );\n    min-height: 150px;\n}\n\n.bordered {\n    background-color: rgba(0,0,0,0.2);\n    border-radius: 20px;\n    border: none !important;\n}\n\n.iconCase {\n    /*background-color: rgba(0,0,0,0.2);*/\n}\n\n\n.mainIconContainer {\n\n    position: fixed;\n    top: 50px;\n    bottom:80px;\n\n    margin-top: 0 !important;\n\n    width: 80vw;\n    margin-left:10vw;\n    margin-right:10vw;\n    min-width: 500px;\n    overflow-y: hidden;\n    overflow-x: hidden;\n\n    color:white;\n    \n    /*background-color: rgba(0,0,0,0.5);*/\n}\n\n.hide {\n    display: none !important;\n}\n\n[hidden] { \n    display: none !important; \n    max-height: 0px;\n}\n\n.icon {\n    display:block;\n    margin: 0 auto;\n    width: 40%;\n/*    box-shadow: 2px 2px rgba(0,0,0,0.3);\n    -moz-box-shadow: 2px 2px rgba(0,0,0,0.3);\n    -webkit-box-shadow: 2px 2px rgba(0,0,0,0.3); \n    -o-box-shadow: 2px 2px rgba(0,0,0,0.3);*/\n    /*border-radius:100px;*/\n}\n\n.iconText {\n    display:inline-block;\n    margin: 10px auto;\n    color: white;\n    background-color: rgba(0,0,0,0.6);\n    padding: 5px 10px 5px 10px;\n    border-radius: 15px;\n}\n\n\n", ""]);
 
 // exports
 
@@ -358,7 +310,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div mouseWheel class=\"mainIconContainer ui five column grid centered\" [dragula]='\"bag-one\"' (mouseWheelUp)=\"mouseWheelUpFunc(event)\" [hidden]=\" show!==1\" (mouseWheelDown)=\"mouseWheelDownFunc(event)\">\n  <div class=\"column \">\n    <div class=testBox>1</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>2</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>3</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>4</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>5</div>\n  </div>\n  \n  <div class=\"column \">\n    <div class=testBox>6</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>7</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>8</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>9</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>10</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>11</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>12</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>13</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>14</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>15</div>\n  </div>\n</div>\n\n<div mouseWheel class=\"mainIconContainer ui five column grid\" [dragula]='\"bag-one\"' (mouseWheelUp)=\"mouseWheelUpFunc(event)\" [hidden]=\" show !==2 \" (mouseWheelDown)=\"mouseWheelDownFunc(event)\">\n  <div class=\"column \">\n    <div class=testBox>a</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>b</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>3</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>4</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>5</div>\n  </div>\n  \n  <div class=\"column \">\n    <div class=testBox>6</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>7</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>8</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>9</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>10</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>11</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>12</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>13</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>14</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>15</div>\n  </div>\n</div>\n\n\n\n<div mouseWheel class=\"mainIconContainer ui five column grid\" [dragula]='\"bag-one\"' (mouseWheelUp)=\"mouseWheelUpFunc(event)\" [hidden]=\" show !==3 \" (mouseWheelDown)=\"mouseWheelDownFunc(event)\">\n  <div class=\"column \">\n    <div class=testBox>zz</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>zz</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>3</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>4</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>5</div>\n  </div>\n  \n  <div class=\"column \">\n    <div class=testBox>6</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>7</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>8</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>9</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>10</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>11</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>12</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>13</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>14</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>15</div>\n  </div>\n</div>"
+module.exports = "\n<div mouseWheel class=\"mainIconContainer ui five column grid\" [dragula]='\"bag-one\"' (mouseWheelUp)=\"mouseWheelUpFunc(event)\" [hidden]=\" show !==1 \" (mouseWheelDown)=\"mouseWheelDownFunc(event)\">\n  <div class=\"column\"  *ngFor=\"let icon of iconData\">\n      <div class=\"iconDiv\">\n        <a href={{icon.url}}><div><img class=\"ui middle aligned tiny image bordered\" [src]=\"icon.iconUrl\" /></div></a>\n        <div class=\"iconText\">{{icon.name}}</div>\n      </div>\n  </div>\n</div>\n\n\n\n<div mouseWheel class=\"mainIconContainer ui five column grid\" [dragula]='\"bag-one\"' (mouseWheelUp)=\"mouseWheelUpFunc(event)\"  [hidden]=\" show!==2\" (mouseWheelDown)=\"mouseWheelDownFunc(event)\">\n  <div class=\"column \">\n    <div class=testBox>1</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>2</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>3</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>4</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>5</div>\n  </div>\n  \n  <div class=\"column \">\n    <div class=testBox>6</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>7</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>8</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>9</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>10</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>11</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>12</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>13</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>14</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>15</div>\n  </div>\n</div>\n\n\n<div mouseWheel class=\"mainIconContainer ui five column grid\" [dragula]='\"bag-one\"' (mouseWheelUp)=\"mouseWheelUpFunc(event)\" [hidden]=\" show !==3 \" (mouseWheelDown)=\"mouseWheelDownFunc(event)\">\n  <div class=\"column \">\n    <div class=testBox>zz</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>zz</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>3</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>4</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>5</div>\n  </div>\n  \n  <div class=\"column \">\n    <div class=testBox>6</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>7</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>8</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>9</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>10</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>11</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>12</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>13</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>14</div>\n  </div>\n\n  <div class=\"column \">\n    <div class=testBox>15</div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -379,16 +331,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 
 
 var HomeComponent = (function () {
-    function HomeComponent(dragulaService) {
+    function HomeComponent(dragulaService, data) {
+        var _this = this;
         this.dragulaService = dragulaService;
+        this.data = data;
         this.show = 1;
+        this.iconData = [];
         dragulaService.drop.subscribe(function (value) {
             console.log("drop: " + value[0]);
             console.log(value.slice(1));
-            //this.onDrag(value.slice(1));
+            // this.onDrag(value.slice(1));
+        });
+        this.iconSubscription = this.data.subscribeIconData().subscribe(function (ary) {
+            _this.iconData = ary;
         });
     }
     HomeComponent.prototype.ngOnInit = function () {
@@ -411,7 +372,8 @@ HomeComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/components/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/components/home/home.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_dragula_ng2_dragula__["DragulaService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_dragula_ng2_dragula__["DragulaService"]) === "function" && _a || Object])
+    __param(1, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])('data')),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_dragula_ng2_dragula__["DragulaService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_dragula_ng2_dragula__["DragulaService"]) === "function" && _a || Object, Object])
 ], HomeComponent);
 
 var _a;
@@ -737,6 +699,8 @@ ChromeRouterService = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -748,9 +712,76 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var DataService = (function () {
     function DataService() {
+        this.iconDataArray = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__["BehaviorSubject"]([]);
+        this.iconDataArray.next([
+            {
+                name: 'Facebook',
+                url: 'https://www.facebook.com',
+                iconUrl: '../../assets/icon-alt/Facebook.png',
+                corner: 0
+            },
+            {
+                name: 'Google',
+                url: 'https://www.facebook.com',
+                iconUrl: '../../assets/icon-alt/Google.png',
+                corner: 0
+            },
+            {
+                name: 'Youtube',
+                url: 'https://www.youtube.com',
+                iconUrl: '../../assets/icon-alt/Youtube I.png',
+                corner: 0
+            },
+            {
+                name: 'Gmail',
+                url: 'https://mail.google.com',
+                iconUrl: '../../assets/icon-alt/Gmail.png',
+                corner: 0
+            },
+            {
+                name: 'LinkedIn',
+                url: 'https://www.linkedin.com',
+                iconUrl: '../../assets/icon-alt/LinkedIn.png',
+                corner: 0
+            },
+            {
+                name: 'Facebook',
+                url: 'https://www.facebook.com',
+                iconUrl: '../../assets/icon-alt/Facebook.png',
+                corner: 0
+            },
+            {
+                name: 'Google',
+                url: 'https://www.facebook.com',
+                iconUrl: '../../assets/icon-alt/Google.png',
+                corner: 0
+            },
+            {
+                name: 'Youtube',
+                url: 'https://www.youtube.com',
+                iconUrl: '../../assets/icon-alt/Youtube I.png',
+                corner: 0
+            },
+            {
+                name: 'Gmail',
+                url: 'https://mail.google.com',
+                iconUrl: '../../assets/icon-alt/Gmail.png',
+                corner: 0
+            },
+            {
+                name: 'LinkedIn',
+                url: 'https://www.linkedin.com',
+                iconUrl: '../../assets/icon-alt/LinkedIn.png',
+                corner: 0
+            },
+        ]);
     }
+    DataService.prototype.subscribeIconData = function () {
+        return this.iconDataArray.asObservable();
+    };
     return DataService;
 }());
 DataService = __decorate([

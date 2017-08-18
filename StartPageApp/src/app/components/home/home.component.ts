@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
+import { Subscription} from 'rxjs/Subscription';
 
 declare let $: any;
 
@@ -10,16 +11,21 @@ declare let $: any;
 })
 export class HomeComponent implements OnInit {
   show = 1;
-  constructor(private dragulaService: DragulaService) { 
+  iconSubscription: Subscription;
+  iconData = [];
+
+
+  constructor(private dragulaService: DragulaService, @Inject('data') private data) {
 
     dragulaService.drop.subscribe((value) => {
       console.log(`drop: ${value[0]}`);
       console.log(value.slice(1));
-      //this.onDrag(value.slice(1));
+      // this.onDrag(value.slice(1));
     });
 
-
-
+    this.iconSubscription = this.data.subscribeIconData().subscribe( (ary: Array<object>) => {
+      this.iconData = ary;
+    });
   }
 
   ngOnInit() {
@@ -27,13 +33,13 @@ export class HomeComponent implements OnInit {
 
 
   mouseWheelUpFunc(): void {
-    if (this.show<3) {
+    if (this.show < 3) {
       this.show++;
     }
   }
 
   mouseWheelDownFunc(): void {
-    if (this.show>1) {
+    if (this.show > 1) {
       this.show--;
     }
   }

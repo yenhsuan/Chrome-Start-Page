@@ -11,7 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 const route: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '',
     pathMatch: 'full'
   },
   {
