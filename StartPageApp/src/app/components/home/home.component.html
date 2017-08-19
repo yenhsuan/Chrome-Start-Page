@@ -1,14 +1,12 @@
 
 <div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)" [hidden]=" show !==1 " (mouseWheelDown)="mouseWheelDownFunc(event)">
-  <div class="column"  *ngFor="let icon of iconData">
-      <div class="iconDiv">
-        <a href={{icon.url}}><div><img class="ui middle aligned tiny image bordered" [src]="icon.iconUrl" /></div></a>
+  <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index">
+      <div id="iconDiv{{i}}" class="iconDiv">
+        <a href={{icon.url}}><div><img class="ui middle aligned size image bordered" [src]="icon.iconUrl" /></div></a>
         <div class="iconText">{{icon.name}}</div>
       </div>
   </div>
 </div>
-
-
 
 <div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)"  [hidden]=" show!==2" (mouseWheelDown)="mouseWheelDownFunc(event)">
   <div class="column ">
