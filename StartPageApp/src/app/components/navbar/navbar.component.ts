@@ -14,6 +14,6 @@ export class NavbarComponent implements OnInit {
   }
 
   triggerFavPanel(): void {
-    $('.ui.sidebar').sidebar('toggle');
+    $('#favSideMenu').sidebar('toggle');
   }
 }

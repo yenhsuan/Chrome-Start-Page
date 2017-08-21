@@ -13,9 +13,10 @@
     align-items: center;
     /*background-color: rgba(0,0,0,0.2);*/
     min-width: 150px;
-    height: calc( (100vh - 200px)*0.25 );
+    height: calc( (100vh - 200px)*0.28 );
     min-height: 150px;
 }
+
 
 .bordered {
     background-color: rgba(0,0,0,0.2);
@@ -23,9 +24,10 @@
     border: none !important;
 }
 
-.size {
+/*.size {
     width:50%;
-}
+    height:50%;
+}*/
 
 
 .mainIconContainer {
@@ -33,7 +35,7 @@
     position: fixed;
     top: 0;
     margin-top: 100px !important;
-    height: calc( 100vh - 200px);
+    max-height: calc( 100vh - 200px);
 
     width: 90vw;
     margin-left: 5vw;
@@ -56,16 +58,16 @@
     max-height: 0px;
 }
 
-.icon {
+/*.icon {
     display:block;
     margin: 0 auto;
     width: 40%;
-/*    box-shadow: 2px 2px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px rgba(0,0,0,0.3);
     -moz-box-shadow: 2px 2px rgba(0,0,0,0.3);
     -webkit-box-shadow: 2px 2px rgba(0,0,0,0.3); 
-    -o-box-shadow: 2px 2px rgba(0,0,0,0.3);*/
-    /*border-radius:100px;*/
-}
+    -o-box-shadow: 2px 2px rgba(0,0,0,0.3);
+    /*border-radius:100px;
+}*/
 
 .iconText {
     display:inline-block;
@@ -76,4 +78,31 @@
     border-radius: 15px;
 }
 
+#addIconBtn {
+    position: fixed;
+    right:50px;
+    bottom:50px;
+}
 
+
+.iconImageDiv {
+    height:80px;
+    line-height: 80px;
+    vertical-align: middle;
+}
+
+.noImageIcon {
+    height:75px;
+    width:75px;
+    line-height: 75px;
+    vertical-align: middle;
+    background-color: white;
+    border-radius: 1000px;
+    margin:0 auto;
+    display:inline-block;
+}
+
+.newIconForm {
+    margin-left:20px;
+    display: block;
+}
