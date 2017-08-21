@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-focus',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./focus.component.css']
 })
 export class FocusComponent implements OnInit {
-
-  constructor() { }
+  now = moment();
+  time = this.now.format('hh:mm A');
+  date = this.now.format('dddd, MMMM DD');
+  constructor() {
+  }
 
   ngOnInit() {
+    setInterval( () => { this.updateTime(); }, 1000);
+  }
+
+  updateTime() {
+    this.now = moment();
+    this.time = this.now.format('hh:mm A');
+    this.date = this.now.format('dddd, MMMM DD');
   }
 
 }
