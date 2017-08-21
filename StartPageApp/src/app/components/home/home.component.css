@@ -13,7 +13,7 @@
     align-items: center;
     /*background-color: rgba(0,0,0,0.2);*/
     min-width: 150px;
-    height: calc( (100vh - 130px)*0.25 );
+    height: calc( (100vh - 200px)*0.25 );
     min-height: 150px;
 }
 
@@ -23,23 +23,22 @@
     border: none !important;
 }
 
-.iconCase {
-    /*background-color: rgba(0,0,0,0.2);*/
+.size {
+    width:50%;
 }
 
 
 .mainIconContainer {
 
     position: fixed;
-    top: 50px;
-    bottom:80px;
+    top: 0;
+    margin-top: 100px !important;
+    height: calc( 100vh - 200px);
 
-    margin-top: 0 !important;
-
-    width: 80vw;
-    margin-left:10vw;
-    margin-right:10vw;
-    min-width: 500px;
+    width: 90vw;
+    margin-left: 5vw;
+    margin-right:5vw;
+    min-width: 350px;
     overflow-y: hidden;
     overflow-x: hidden;
 
