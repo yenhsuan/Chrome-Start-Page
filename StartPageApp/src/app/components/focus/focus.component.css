@@ -1,0 +1,14 @@
+.focusDiv {
+	color: white; 
+	height: 100%;
+	padding-top:20%;
+}
+
+.focusDiv h1{
+	font-size:80px;
+	font-weight: normal;
+}
+.focusDiv h2{
+	font-size:40px;
+	font-weight: normal;
+}
