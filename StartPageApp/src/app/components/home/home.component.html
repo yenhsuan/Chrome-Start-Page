@@ -2,11 +2,111 @@
 <div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)" [hidden]=" show !==1 " (mouseWheelDown)="mouseWheelDownFunc(event)">
   <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index">
       <div id="iconDiv{{i}}" class="iconDiv">
-        <a href={{icon.url}}><div><img class="ui middle aligned size image bordered" [src]="icon.iconUrl" /></div></a>
+        <a href={{icon.url}}>
+          <div class="iconImageDiv" *ngIf="icon.iconUrl !== ''">
+            <img class="ui middle aligned tiny image bordered" [src]="icon.iconUrl" />
+          </div>
+
+          <div *ngIf="icon.iconUrl === ''" class="iconImageDiv">
+              <div class="noImageIcon">{{icon.name}}</div>
+          </div>
+        </a>
         <div class="iconText">{{icon.name}}</div>
       </div>
   </div>
 </div>
+
+
+
+
+<button id="addIconBtn" class="circular ui icon button" (click)="showAddNewIconMenu()">
+  <i class="plus icon"></i>
+</button>
+
+
+
+
+<div id="addNewIconMenu" class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    ADD
+  </div>
+  <div class="image content">
+    
+    <div class="ui small image">
+      <div class="ui red ribbon label" style="opacity: 0.5">Preview</div>
+      <!-- <div class="ui top left attached label">Preview</div> -->
+      <div>
+        <img src="../../../assets/icon-alt/Facebook.png">
+      </div>
+      <div class="iconText" style="display: block; text-align: center">test</div>
+    </div>
+
+    <div class="description" style="display:block;">
+      <!-- <div class="ui header">Settings</div> -->
+    </div> 
+          <div class="ui form" style="width: 100%">
+
+          <div class="field" >
+            <label>Name</label>
+            <input type="text" placeholder="Website name">
+          </div>
+
+          <div class="field" >
+            <label>URL</label>
+            <input type="text" placeholder="Website URL">
+          </div>
+
+        <div class="field">
+          <label>Icon URL</label>
+          <div class="ui action input">
+          <input type="text" id="_attachmentName" placeholder="Enter icon URL or load from files" [(ngModel)]="file">
+          <label for="attachmentName" class="ui icon button btn-file">
+              <i class="fa fa-upload"></i>
+              <input type="file" (change)="fileChangeEvent($event)" id="attachmentName" name="attachmentName" style="display: none">
+          </label>
+        </div>
+        </div>
+        
+        <div class="field">
+        <label>Background color</label>
+          <button class="ui red button icon circular"></button>
+          <button class="ui orange button icon circular"></button>
+          <button class="ui yellow button icon circular"></button>
+          <button class="ui olive button icon circular"></button>
+          <button class="ui green button icon circular"></button>
+          <button class="ui teal button icon circular"></button>
+          <button class="ui blue button icon circular"></button>
+          <button class="ui violet button icon circular"></button>
+          <button class="ui purple button icon circular"></button>
+          <button class="ui pink button icon circular"></button>
+          <button class="ui brown button icon circular"></button>
+          <button class="ui grey button icon circular"></button>
+          <button class="ui black button icon circular"></button>
+        </div>
+
+        <div class="field">
+          <div class="ui toggle checkbox">
+          <input type="checkbox" tabindex="0" class="hidden">
+          <label>Icon ShowCase</label>
+          </div>
+        </div>
+      
+      </div>
+  </div>
+  <div class="actions">
+    <div class="ui black deny button">
+      Cancle
+    </div>
+    <div class="ui positive right labeled icon button">
+      Done
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+
+
+
 
 <div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)"  [hidden]=" show!==2" (mouseWheelDown)="mouseWheelDownFunc(event)">
   <div class="column ">
@@ -132,3 +232,4 @@
     <div class=testBox>15</div>
   </div>
 </div>
+
