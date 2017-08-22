@@ -1,14 +1,14 @@
 
-<div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)" [hidden]=" show !==1 " (mouseWheelDown)="mouseWheelDownFunc(event)">
-  <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index">
+<div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)" (mouseWheelDown)="mouseWheelDownFunc(event)">
+  <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index" [hidden]="i<(show-1)*15  || i>=show*15">
       <div id="iconDiv{{i}}" class="iconDiv">
         <a href={{icon.url}}>
           <div class="iconImageDiv" *ngIf="icon.iconUrl !== ''">
-            <img class="ui middle aligned tiny image bordered" [src]="icon.iconUrl" />
+            <img class="ui middle aligned tiny image" [ngClass]="{'bordered': icon.showIconCase}" [src]="icon.iconUrl" />
           </div>
 
-          <div *ngIf="icon.iconUrl === ''" class="iconImageDiv">
-              <div class="noImageIcon">{{icon.name}}</div>
+          <div *ngIf="icon.iconUrl === ''" class="noIconImageDiv" [ngClass]="{'bordered': icon.showIconCase}">
+              <div class="noImageIcon" [style.background]="colorMap[icon.bgColor]">{{icon.name}}</div>
           </div>
         </a>
         <div class="iconText">{{icon.name}}</div>
@@ -32,15 +32,28 @@
     ADD
   </div>
   <div class="image content">
-    
-    <div class="ui small image">
-      <div class="ui red ribbon label" style="opacity: 0.5">Preview</div>
-      <!-- <div class="ui top left attached label">Preview</div> -->
-      <div>
-        <img src="../../../assets/icon-alt/Facebook.png">
+
+      
+
+      <div class="iconDiv">
+          <div class="iconImageDiv" *ngIf="newIconIconURL !== ''">
+            <img class="ui middle aligned tiny image" [ngClass]="{'bordered': newIconShowIconCase}" [src]="newIconIconURL" onError="this.src='../../assets/icon-alt/Web.png';" />
+          </div>
+
+          <div *ngIf="newIconIconURL === ''" class="noIconImageDiv" [ngClass]="{'bordered': newIconShowIconCase}">
+              <!-- <div class="noImageIcon button red">{{newIconTitle}}</div> -->
+              <div class="noImageIcon"  [style.background]="colorMap[newIconBgColor]">{{newIconTitle}}</div>
+          </div>
+        <div *ngIf="newIconTitle" class="iconText">{{newIconTitle}}</div>
       </div>
-      <div class="iconText" style="display: block; text-align: center">test</div>
-    </div>
+
+
+
+
+
+
+
+
 
     <div class="description" style="display:block;">
       <!-- <div class="ui header">Settings</div> -->
@@ -49,18 +62,18 @@
 
           <div class="field" >
             <label>Name</label>
-            <input type="text" placeholder="Website name">
+            <input type="text" placeholder="Website name" maxlength="12" [(ngModel)]="newIconTitle">
           </div>
 
           <div class="field" >
             <label>URL</label>
-            <input type="text" placeholder="Website URL">
+            <input type="text" placeholder="Website URL" [(ngModel)]="newIconURL">
           </div>
 
         <div class="field">
           <label>Icon URL</label>
           <div class="ui action input">
-          <input type="text" id="_attachmentName" placeholder="Enter icon URL or load from files" [(ngModel)]="file">
+          <input type="text" id="_attachmentName" placeholder="Enter icon URL or load from files" [(ngModel)]="newIconIconURL" >
           <label for="attachmentName" class="ui icon button btn-file">
               <i class="fa fa-upload"></i>
               <input type="file" (change)="fileChangeEvent($event)" id="attachmentName" name="attachmentName" style="display: none">
@@ -70,24 +83,25 @@
         
         <div class="field">
         <label>Background color</label>
-          <button class="ui red button icon circular"></button>
-          <button class="ui orange button icon circular"></button>
-          <button class="ui yellow button icon circular"></button>
-          <button class="ui olive button icon circular"></button>
-          <button class="ui green button icon circular"></button>
-          <button class="ui teal button icon circular"></button>
-          <button class="ui blue button icon circular"></button>
-          <button class="ui violet button icon circular"></button>
-          <button class="ui purple button icon circular"></button>
-          <button class="ui pink button icon circular"></button>
-          <button class="ui brown button icon circular"></button>
-          <button class="ui grey button icon circular"></button>
-          <button class="ui black button icon circular"></button>
+          <button class="ui red button icon circular" (click)=" newIconBgColor = 'red';"></button>
+          <button class="ui orange button icon circular" (click)=" newIconBgColor = 'orange';"></button>
+          <button class="ui yellow button icon circular" (click)=" newIconBgColor = 'yellow';"></button>
+          <button class="ui olive button icon circular" (click)=" newIconBgColor = 'olive';"></button>
+          <button class="ui green button icon circular" (click)=" newIconBgColor = 'green';"></button>
+          <button class="ui teal button icon circular" (click)=" newIconBgColor = 'teal';"></button>
+          <button class="ui blue button icon circular" (click)=" newIconBgColor = 'blue';"></button>
+          <button class="ui violet button icon circular" (click)=" newIconBgColor = 'violet';"></button>
+          <button class="ui purple button icon circular" (click)=" newIconBgColor = 'purple';"></button>
+          <button class="ui pink button icon circular" (click)=" newIconBgColor = 'pink';"></button>
+          <button class="ui brown button icon circular" (click)=" newIconBgColor = 'brown';"></button>
+          <button class="ui grey button icon circular" (click)=" newIconBgColor = 'grey';"></button>
+          <button class="ui black button icon circular" (click)=" newIconBgColor = 'black';"></button>
+          {{newIconColor}}
         </div>
 
         <div class="field">
           <div class="ui toggle checkbox">
-          <input type="checkbox" tabindex="0" class="hidden">
+          <input type="checkbox" tabindex="0" class="hidden" [(ngModel)]="newIconShowIconCase">
           <label>Icon ShowCase</label>
           </div>
         </div>
@@ -95,10 +109,10 @@
       </div>
   </div>
   <div class="actions">
-    <div class="ui black deny button">
+    <div class="ui black deny button" (click)="resetAddNewIconForm()">
       Cancle
     </div>
-    <div class="ui positive right labeled icon button">
+    <div class="ui positive right labeled icon button" (click)="addNewIcon()">
       Done
       <i class="checkmark icon"></i>
     </div>
@@ -106,130 +120,8 @@
 </div>
 
 
-
-
-<div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)"  [hidden]=" show!==2" (mouseWheelDown)="mouseWheelDownFunc(event)">
-  <div class="column ">
-    <div class=testBox>1</div>
+  <div class="dotPlate" [hidden]="lenShow==1">
+    <div class="dot" *ngFor="let x of Arr(lenShow).fill(1); let i = index" [ngClass]="{dotFade: i!=show-1}" (click)="show=(i+1)">
+    </div>
   </div>
-
-  <div class="column ">
-    <div class=testBox>2</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>3</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>4</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>5</div>
-  </div>
-  
-  <div class="column ">
-    <div class=testBox>6</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>7</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>8</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>9</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>10</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>11</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>12</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>13</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>14</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>15</div>
-  </div>
-</div>
-
-
-<div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)" [hidden]=" show !==3 " (mouseWheelDown)="mouseWheelDownFunc(event)">
-  <div class="column ">
-    <div class=testBox>zz</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>zz</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>3</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>4</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>5</div>
-  </div>
-  
-  <div class="column ">
-    <div class=testBox>6</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>7</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>8</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>9</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>10</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>11</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>12</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>13</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>14</div>
-  </div>
-
-  <div class="column ">
-    <div class=testBox>15</div>
-  </div>
-</div>
 

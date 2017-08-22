@@ -38,49 +38,56 @@ export class DataService {
         url: 'https://www.facebook.com',
         iconUrl: '../../assets/icon-alt/Facebook.png',
         bgColor: '',
-        corner: 0
+        corner: 0,
+        showIconCase: true
       },
       {
         name: 'Google',
         url: 'https://www.facebook.com',
         iconUrl: '../../assets/icon-alt/Google.png',
         bgColor: '',
-        corner: 0
+        corner: 0,
+        showIconCase: true
       },
       {
         name: 'Youtube',
         url: 'https://www.youtube.com',
         iconUrl: '../../assets/icon-alt/Youtube I.png',
         bgColor: '',
-        corner: 0
+        corner: 0,
+        showIconCase: true
       },
       {
         name: 'Gmail',
         url: 'https://mail.google.com',
         iconUrl: '../../assets/icon-alt/Gmail.png',
         bgColor: '',
-        corner: 0
+        corner: 0,
+        showIconCase: false
       },
       {
         name: 'LinkedIn',
         url: 'https://www.linkedin.com',
         iconUrl: '../../assets/icon-alt/LinkedIn.png',
         bgColor: '',
-        corner: 0
+        corner: 0,
+        showIconCase: true
       },
       {
         name: 'USC',
         url: 'https://www.usc.edu',
         iconUrl: '',
         bgColor: '',
-        corner: 0
+        corner: 0,
+        showIconCase: true
       },
       {
         name: 'USC',
         url: 'https://www.usc.edu',
-        iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvmk02eS5XqDlwWMixBqkVXduWZiqclqbsH3kwWvy5m_-emEpd',
-        bgColor: '',
-        corner: 0
+        iconUrl: '',
+        bgColor: 'red',
+        corner: 0,
+        showIconCase: true
       }
     ];
 
