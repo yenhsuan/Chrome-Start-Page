@@ -1,4 +1,4 @@
-export const website = [
+export const defaultWebsite = [
   {
     name: 'Facebook',
     url: 'https://www.facebook.com',
