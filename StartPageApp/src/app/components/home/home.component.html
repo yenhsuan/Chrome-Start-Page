@@ -1,21 +1,22 @@
 
-<div mouseWheel class="mainIconContainer ui five column grid" [dragula]='"bag-one"' (mouseWheelUp)="mouseWheelUpFunc(event)" (mouseWheelDown)="mouseWheelDownFunc(event)">
-  <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index" [hidden]="i<(show-1)*15  || i>=show*15">
-      <div id="iconDiv{{i}}" class="iconDiv">
-        <a href={{icon.url}}>
-          <div class="iconImageDiv" *ngIf="icon.iconUrl !== ''">
-            <img class="ui middle aligned tiny image" [ngClass]="{'bordered': icon.showIconCase}" [src]="icon.iconUrl" />
-          </div>
+<div mouseWheel id="pageDiv" (mouseWheelUp)="mouseWheelUpFunc(event)" (mouseWheelDown)="mouseWheelDownFunc(event)">
+  <div  class="mainIconContainer ui five column grid" [dragula]='"bag-one"' >
+    <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index" [hidden]="i<(show-1)*15  || i>=show*15">
+        <div id="iconDiv{{i}}" class="iconDiv">
+          <a href={{icon.url}}>
+            <div class="iconImageDiv" *ngIf="icon.iconUrl !== ''">
+              <img class="ui middle aligned tiny image" [ngClass]="{'bordered': icon.showIconCase}" [src]="icon.iconUrl" />
+            </div>
 
-          <div *ngIf="icon.iconUrl === ''" class="noIconImageDiv" [ngClass]="{'bordered': icon.showIconCase}">
-              <div class="noImageIcon" [style.background]="colorMap[icon.bgColor]">{{icon.name}}</div>
-          </div>
-        </a>
-        <div class="iconText">{{icon.name}}</div>
-      </div>
+            <div *ngIf="icon.iconUrl === ''" class="noIconImageDiv" [ngClass]="{'bordered': icon.showIconCase}">
+                <div class="noImageIcon" [style.background]="colorMap[icon.bgColor]">{{icon.name}}</div>
+            </div>
+          </a>
+          <div class="iconText">{{icon.name}}</div>
+        </div>
+    </div>
   </div>
 </div>
-
 
 
 

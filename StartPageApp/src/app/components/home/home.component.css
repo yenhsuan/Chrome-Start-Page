@@ -1,3 +1,9 @@
+
+#pageDiv {
+    height: calc( 100vh - 200px);
+}
+
+
 .iconDiv {
     text-align: center;
     align-items: center;
@@ -7,20 +13,17 @@
     min-height: 150px;
 }
 
-
 .bordered {
     background-color: rgba(0,0,0,0.2);
     border-radius: 20px;
     border: none !important;
 }
 
-
 .mainIconContainer {
-
     position: fixed;
     top: 0;
     margin-top: 100px !important;
-    height: calc( 100vh - 200px);
+    max-height: calc( 100vh - 200px);
 
     width: 90vw;
     margin-left: 5vw;
@@ -104,9 +107,6 @@
     display: block;
 }
 
-
-
-
 .dot {
     position: relative;
     background-color:white;
@@ -132,3 +132,5 @@
 .dotFade {
     opacity: 0.5;
 }
+
+

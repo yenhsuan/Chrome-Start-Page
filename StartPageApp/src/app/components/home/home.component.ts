@@ -126,7 +126,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   mouseWheelDownFunc(): void {
 
     const len = this.iconData.length;
-    if ( this.show*15 < len) {
+    if ( this.show * 15 < len) {
       if (this.changingPage === false) {
         this.changingPage = true;
         this.show++;
