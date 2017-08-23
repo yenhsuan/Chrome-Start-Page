@@ -1,7 +1,9 @@
 import { Component, OnInit, HostListener, Inject, AfterViewInit } from '@angular/core';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
+import { website } from '../../defaultWeb.config';
 
 declare let $: any;
+
 
 @Component({
   selector: 'app-home',
@@ -9,16 +11,38 @@ declare let $: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, AfterViewInit {
-  show = 1;
+  Arr = Array;
+  colorMap = {
+    red            : '#D92B2F',
+    orange         : '#F0712C',
+    yellow         : '#F9BC2E',
+    olive          : '#B5CA31',
+    green          : '#2DB84B',
+    teal           : '#1CB5AC',
+    blue           : '#2987CD',
+    violet         : '#643CC6',
+    purple         : '#A23BC5',
+    pink           : '#DE3E96',
+    brown          : '#A46743',
+    grey           : '#767676',
+    black          : '#1B1C1D'
+  };
+
+
   iconData = [];
+  show = 1;
+  lenShow: number;
   changingPage = false;
+  
+  editMode = false;
+  editIndex = -1;
 
   // For adding new icon data-binding-----
 
   newIconTitle = '';
   newIconURL = '';
   newIconIconURL = '';
-  newIconColor = 'black';
+  newIconBgColor = 'blue';
   newIconShowIconCase = false;
 
   // -------------------------------------
@@ -27,21 +51,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     // Get iconArray reference form data service
     this.iconData = this.data.iconArray;
+    this.lenShow = Math.ceil(this.data.iconArray.length / 15);
 
     // Dragula drop event listener
     dragulaService.drop.subscribe(( divObj: Array<object>) => {
+      console.log(divObj.slice(1));
       const iconDivObj = divObj.slice(1)[1]['children'];
-
       const iconArrayUpdated = [];
       for (let i = 0; i < iconDivObj.length; i++) {
-        const idx = iconDivObj[i]['id'].charAt(4);
+        const idx = iconDivObj[i]['id'].substring(4);
         iconArrayUpdated.push(this.iconData[idx]);
       }
 
       this.data.iconArray = iconArrayUpdated;
       this.data.updateIconsArrayToLocalStorage();
       this.iconData = iconArrayUpdated;
+      this.lenShow = Math.ceil(this.data.iconArray.length / 15);
     });
+
 
     // Right Click Menu
     $.contextMenu({
@@ -51,13 +78,27 @@ export class HomeComponent implements OnInit, AfterViewInit {
             name: 'Edit',
             icon: 'fa-pencil-square-o',
             callback: (key: any, opt: any) => {
-              console.log(opt)
+              const target = opt['$trigger'][0]['id'].substring(7);
+              this.newIconTitle = this.iconData[target]['name'];
+              this.newIconURL = this.iconData[target]['url'];
+              this.newIconIconURL = this.iconData[target]['iconUrl'];
+              this.newIconBgColor = this.iconData[target]['bgColor'];
+              this.newIconShowIconCase = this.iconData[target]['showIconCase'];
+
+              this.editMode = true;
+              this.editIndex = target;
+              $('#addNewIconMenu').modal('show');
             }
           },
           del: {name: 'Delete', icon: 'fa-trash-o',
             callback: (key: any, opt: any) => {
-              const target = opt['$trigger'][0]['id'].charAt(7);
+              const target = opt['$trigger'][0]['id'].substring(7);
               this.iconData.splice(target, 1);
+              this.lenShow = Math.ceil(this.data.iconArray.length / 15);
+              if (this.show !== 1 && this.show > this.lenShow) {
+                this.show--;
+              }
+
               this.data.updateIconsArrayToLocalStorage();
             }
           },
@@ -82,22 +123,24 @@ export class HomeComponent implements OnInit, AfterViewInit {
   onResize(event) {
   }
 
-  mouseWheelUpFunc(): void {
-    if (this.show < 3) {
+  mouseWheelDownFunc(): void {
+
+    const len = this.iconData.length;
+    if ( this.show*15 < len) {
       if (this.changingPage === false) {
         this.changingPage = true;
         this.show++;
-        setTimeout( () => { this.changingPage = false; } , 200);
+        setTimeout( () => { this.changingPage = false; } , 650);
       }
     }
   }
 
-  mouseWheelDownFunc(): void {
+  mouseWheelUpFunc(): void {
     if (this.show > 1) {
       if (this.changingPage === false) {
         this.changingPage = true;
         this.show--;
-        setTimeout( () => { this.changingPage = false; } , 200);
+        setTimeout( () => { this.changingPage = false; } , 650);
       }
     }
   }
@@ -106,19 +149,49 @@ export class HomeComponent implements OnInit, AfterViewInit {
     $('#addNewIconMenu').modal('show');
   }
 
-  fileChangeEvent(fileInput: any) {
-      console.log('111');
-      console.log(fileInput);
-      if (fileInput.target.files && fileInput.target.files[0]) {
-        console.log('111');
-        const reader = new FileReader();
+  addNewIcon(): void {
+    const newIcon = {
+        name: this.newIconTitle,
+        url: this.newIconURL,
+        iconUrl: this.newIconIconURL,
+        bgColor: this.newIconBgColor,
+        corner: 0,
+        showIconCase: this.newIconShowIconCase
+    };
 
-        reader.onload = function (e : any) {
-            $('#preview').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(fileInput.target.files[0]);
-      }
+    if (this.editMode) {
+      this.iconData[this.editIndex] = newIcon;
+      // this.data.iconArray[this.editIndex] = newIcon;
+      this.editMode = false;
+    } else {
+      this.iconData.push(newIcon);
+    }
+    this.lenShow = Math.ceil(this.data.iconArray.length / 15);
+    this.data.updateIconsArrayToLocalStorage();
+    this.resetAddNewIconForm();
   }
+
+  resetAddNewIconForm(): void {
+    this.newIconTitle = '';
+    this.newIconURL = '';
+    this.newIconIconURL = '';
+    this.newIconBgColor = 'blue';
+    this.newIconShowIconCase = false;
+  }
+
+  // fileChangeEvent(fileInput: any) {
+  //     console.log('111');
+  //     console.log(fileInput);
+  //     if (fileInput.target.files && fileInput.target.files[0]) {
+  //       console.log('111');
+  //       const reader = new FileReader();
+
+  //       reader.onload = function (e : any) {
+  //           $('#preview').attr('src', e.target.result);
+  //       }
+
+  //       reader.readAsDataURL(fileInput.target.files[0]);
+  //     }
+  // }
 
 }
