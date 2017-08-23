@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, Inject, AfterViewInit } from '@angular/core';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
-import { website } from '../../defaultWeb.config';
+import { defaultWebsite } from '../../defaultWeb.config';
 
 declare let $: any;
 
@@ -114,6 +114,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     $('.ui.checkbox').checkbox();
+    console.log(defaultWebsite);
   }
 
   ngAfterViewInit() {
@@ -161,7 +162,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     if (this.editMode) {
       this.iconData[this.editIndex] = newIcon;
-      // this.data.iconArray[this.editIndex] = newIcon;
       this.editMode = false;
     } else {
       this.iconData.push(newIcon);
