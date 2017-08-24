@@ -65,7 +65,7 @@
 <div id="addNewIconMenu" class="ui modal">
   <i class="close icon"></i>
   <div class="header">
-    ADD
+    Add Customized Icon
   </div>
   <div class="image content">
 
@@ -101,9 +101,16 @@
             <input type="text" placeholder="Website name" maxlength="12" [(ngModel)]="newIconTitle">
           </div>
 
+
+
           <div class="field" >
             <label>URL</label>
-            <input type="text" placeholder="Website URL" [(ngModel)]="newIconURL">
+            <div class="ui labeled input">
+                <div class="ui label">
+                  http://
+                </div>
+                <input type="text" placeholder="website url" [(ngModel)]="newIconURL">
+            </div>
           </div>
 
         <div class="field">
@@ -118,7 +125,7 @@
         </div>
         
         <div class="field">
-        <label>Background color</label>
+        <label>Default Background Color</label>
           <button class="ui red button icon circular" (click)=" newIconBgColor = 'red';"></button>
           <button class="ui orange button icon circular" (click)=" newIconBgColor = 'orange';"></button>
           <button class="ui yellow button icon circular" (click)=" newIconBgColor = 'yellow';"></button>
@@ -132,13 +139,12 @@
           <button class="ui brown button icon circular" (click)=" newIconBgColor = 'brown';"></button>
           <button class="ui grey button icon circular" (click)=" newIconBgColor = 'grey';"></button>
           <button class="ui black button icon circular" (click)=" newIconBgColor = 'black';"></button>
-          {{newIconColor}}
         </div>
 
         <div class="field">
           <div class="ui toggle checkbox">
           <input type="checkbox" tabindex="0" class="hidden" [(ngModel)]="newIconShowIconCase">
-          <label>Icon ShowCase</label>
+          <label>Show Icon Box</label>
           </div>
         </div>
       

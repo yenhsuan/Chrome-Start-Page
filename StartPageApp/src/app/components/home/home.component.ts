@@ -172,7 +172,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   addNewIcon(): void {
     const newIcon = {
         name: this.newIconTitle,
-        url: this.newIconURL,
+        url: 'http://' + this.newIconURL,
         iconUrl: this.newIconIconURL,
         bgColor: this.newIconBgColor,
         corner: 0,
