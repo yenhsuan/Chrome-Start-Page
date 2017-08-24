@@ -30,10 +30,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   iconData = [];
+  defaultWebsiteData = [];
   show = 1;
   lenShow: number;
   changingPage = false;
-  
+ 
   editMode = false;
   editIndex = -1;
 
@@ -51,6 +52,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     // Get iconArray reference form data service
     this.iconData = this.data.iconArray;
+    this.defaultWebsiteData = defaultWebsite;
     this.lenShow = Math.ceil(this.data.iconArray.length / 15);
 
     // Dragula drop event listener
@@ -150,6 +152,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     $('#addNewIconMenu').modal('show');
   }
 
+  showAddNewDefaultIconMenu(): void {
+    $('#addNewDefaultIconMenu').modal('show');
+  }
+
   addNewIcon(): void {
     const newIcon = {
         name: this.newIconTitle,
@@ -169,6 +175,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.lenShow = Math.ceil(this.data.iconArray.length / 15);
     this.data.updateIconsArrayToLocalStorage();
     this.resetAddNewIconForm();
+  }
+
+  addNewDefaultIcon(index): void {
+    this.data.iconArray.push(JSON.parse(JSON.stringify(defaultWebsite[index])));
+    this.lenShow = Math.ceil(this.data.iconArray.length / 15);
+    this.data.updateIconsArrayToLocalStorage();
   }
 
   resetAddNewIconForm(): void {
