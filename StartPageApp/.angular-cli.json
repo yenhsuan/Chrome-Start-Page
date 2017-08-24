@@ -23,13 +23,15 @@
         "../node_modules/semantic-ui-css/semantic.css",
         "../node_modules/dragula/dist/dragula.css",
         "../node_modules/jquery-contextmenu/dist/jquery.contextMenu.css",
+        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css",
         "styles.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/semantic-ui-css/semantic.js",
         "../node_modules/moment/min/moment.min.js",
-        "../node_modules/jquery-contextmenu/dist/jquery.contextMenu.js"
+        "../node_modules/jquery-contextmenu/dist/jquery.contextMenu.js",
+        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

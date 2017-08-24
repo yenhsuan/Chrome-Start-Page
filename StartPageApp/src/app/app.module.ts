@@ -2,9 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DragulaModule } from 'ng2-dragula/ng2-dragula';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 
-//import { Route } from './app.routes';
+// import { Route } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FocusComponent } from './components/focus/focus.component';
@@ -33,7 +35,9 @@ import { MouseWheelDirective } from './mousewheel.directive';
     BrowserModule,
     FormsModule,
     // Route,
-    DragulaModule
+    DragulaModule,
+    BrowserAnimationsModule, 
+    ToastModule.forRoot()
   ],
   providers: [
     {

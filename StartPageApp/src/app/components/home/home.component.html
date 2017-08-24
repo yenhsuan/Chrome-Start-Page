@@ -37,7 +37,7 @@
     <div  class="ui five column grid">
       <div id="defaultIcon{{i}}" class="column"  *ngFor="let icon of defaultWebsiteData; let i = index">
           <div id="defaultIconDiv{{i}}" class="iconDiv">
-            <div class="defaultIconDiv" (click)="addNewDefaultIcon(i)">
+            <div class="defaultIconDiv" (click)="addNewDefaultIcon(i);showSuccess();">
               <div class="iconImageDiv" *ngIf="icon.iconUrl !== ''">
                 <img class="ui middle aligned tiny image" [ngClass]="{'bordered': icon.showIconCase}" [src]="icon.iconUrl" />
               </div>

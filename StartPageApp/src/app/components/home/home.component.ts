@@ -1,6 +1,7 @@
-import { Component, OnInit, HostListener, Inject, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener, Inject, AfterViewInit, ViewContainerRef } from '@angular/core';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
 import { defaultWebsite } from '../../defaultWeb.config';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 declare let $: any;
 
@@ -48,7 +49,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   // -------------------------------------
 
-  constructor(private dragulaService: DragulaService, @Inject('data') private data) {
+  constructor(private dragulaService: DragulaService, @Inject('data') private data, public toastr: ToastsManager, vcr: ViewContainerRef) {
+
+    this.toastr.setRootViewContainerRef(vcr);
+
 
     // Get iconArray reference form data service
     this.iconData = this.data.iconArray;
@@ -189,6 +193,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.newIconIconURL = '';
     this.newIconBgColor = 'blue';
     this.newIconShowIconCase = false;
+  }
+
+  showSuccess() {
+    this.toastr.success('Successfully added website!', 'Success!');
   }
 
   // fileChangeEvent(fileInput: any) {
