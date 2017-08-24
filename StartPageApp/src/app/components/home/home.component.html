@@ -20,13 +20,20 @@
 
 
 
-<button id="addIconBtn" class="circular ui icon button" (click)="showAddNewIconMenu()">
-  <i class="plus icon"></i>
-</button>
+<div id="addIconTriggerBtn" class="circular ui icon button blue"><i class="plus icon"></i></div>
+<div class="ui flowing popup top left transition hidden">
+  <div class="ui two column divided center aligned grid">
+    <div class="column">
+      <h4 class="ui header">Popular</h4>
+      <div class="ui button green" (click)="showAddNewDefaultIconMenu()">Add</div>
+    </div>
+    <div class="column">
+      <h4 class="ui header">Custom</h4>
+      <div class="ui button yellow" (click)="showAddNewIconMenu()">Add</div>
+    </div>
+  </div>
+</div>
 
-<button id="addDefaultIconBtn" class="circular ui icon button" (click)="showAddNewDefaultIconMenu()">
-  <i class="plus icon"></i>
-</button>
 
 <div id="addNewDefaultIconMenu" class="ui modal">
   <i class="close icon"></i>
@@ -48,8 +55,8 @@
     </div>
   </div>
   <div class="actions">
-    <div class="ui black deny button">
-      Cancle
+    <div class="ui blue deny button">
+      Close
     </div>
   </div>
 </div>
@@ -141,7 +148,7 @@
     <div class="ui black deny button" (click)="resetAddNewIconForm()">
       Cancle
     </div>
-    <div class="ui positive right labeled icon button" (click)="addNewIcon()">
+    <div class="ui positive right labeled icon button" (click)="addNewIcon()" [ngClass]="{disabled: (!newIconTitle.trim() || !newIconURL.trim() )}">
       Done
       <i class="checkmark icon"></i>
     </div>
@@ -153,4 +160,8 @@
     <div class="dot" *ngFor="let x of Arr(lenShow).fill(1); let i = index" [ngClass]="{dotFade: i!=show-1}" (click)="show=(i+1)">
     </div>
   </div>
+
+
+
+
 

@@ -120,6 +120,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     $('.ui.checkbox').checkbox();
+    $('#addIconTriggerBtn').popup({ 
+      inline: true,
+      on    : 'click'
+    });
+;
+;
     console.log(defaultWebsite);
   }
 
@@ -153,12 +159,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   showAddNewIconMenu(): void {
+    $('#addIconTriggerBtn').popup('hide');
     $('#addNewIconMenu').modal('show');
   }
 
   showAddNewDefaultIconMenu(): void {
+    $('#addIconTriggerBtn').popup('hide');
     $('#addNewDefaultIconMenu').modal('show');
   }
+
 
   addNewIcon(): void {
     const newIcon = {
@@ -198,6 +207,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   showSuccess() {
     this.toastr.success('Successfully added website!', 'Success!');
   }
+
+
 
   // fileChangeEvent(fileInput: any) {
   //     console.log('111');
