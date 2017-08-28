@@ -8,13 +8,28 @@ declare let chrome: any;
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(@Inject('gcRouter') private gcRouter) { }
+  constructor(@Inject('gcRouter') public gcRouter) { }
 
   ngOnInit() {
-  
+    $('#chromePages').popup({
+        popup: '#pop1',
+        on    : 'click'
+    });
   }
 
-  triggerFavPanel(): void {
-    $('#favSideMenu').sidebar('toggle');
+  openAppsPage() {
+    chrome.tabs.create({url: 'chrome://apps'});
   }
+
+  openBookMark() {
+    chrome.tabs.update({url: 'chrome://bookmarks/'});
+  }
+
+  openChromeSetting() {
+    chrome.tabs.update({url: 'chrome://settings/'});
+  }
+
+  // triggerFavPanel(): void {
+  //   $('#favSideMenu').sidebar('toggle');
+  // }
 }

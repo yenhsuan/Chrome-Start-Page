@@ -6,12 +6,13 @@
   padding: 10px;
   border-radius: 20px; 
   
-  font-size: 20px;
+  
   background-color: rgba(0,0,0,0.7);
   color: white;
 }
 
 .fa {
+  font-size: 20px;
   margin-left: 10px;
   margin-right: 10px;
 }
@@ -34,4 +35,16 @@
 .favBtn:hover {
   color: #fbbc05 !important;
   cursor: pointer;
+}
+
+#pop1 {
+  max-width:150px;
+}
+
+.button > i:hover {
+  color:white;
+}
+
+.xx {
+  height: 300px;
 }

@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 
 
-// import { Route } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FocusComponent } from './components/focus/focus.component';
@@ -19,6 +18,7 @@ import { ChromeRouterService} from './services/chrome-router.service';
 import { DataService} from './services/data.service';
 
 import { MouseWheelDirective } from './mousewheel.directive';
+import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +29,14 @@ import { MouseWheelDirective } from './mousewheel.directive';
     SettingComponent,
     TimeComponent,
     NavbarComponent,
-    MouseWheelDirective
+    MouseWheelDirective,
+    BookmarksComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    // Route,
     DragulaModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     ToastModule.forRoot()
   ],
   providers: [

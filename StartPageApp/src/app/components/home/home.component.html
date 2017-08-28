@@ -1,5 +1,5 @@
 
-<div mouseWheel id="pageDiv" (mouseWheelUp)="mouseWheelUpFunc(event)" (mouseWheelDown)="mouseWheelDownFunc(event)">
+<div mouseWheel id="pageDiv" (mouseWheelUp)="mouseWheelUpFunc()" (mouseWheelDown)="mouseWheelDownFunc()">
   <div  class="mainIconContainer ui five column grid" [dragula]='"bag-one"' >
     <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index" [hidden]="i<(show-1)*15  || i>=show*15">
         <div id="iconDiv{{i}}" class="iconDiv">
@@ -73,7 +73,7 @@
 
       <div class="iconDiv">
           <div class="iconImageDiv" *ngIf="newIconIconURL !== ''">
-            <img class="ui middle aligned tiny image" [ngClass]="{'bordered': newIconShowIconCase}" [src]="newIconIconURL" onError="this.src='../../assets/icon-alt/Web.png';" />
+            <img class="ui middle aligned tiny image" [ngClass]="{'bordered': newIconShowIconCase}" [src]="newIconIconURL" onError="this.src='../../assets/icon-alt/Google Chrome.png';" />
           </div>
 
           <div *ngIf="newIconIconURL === ''" class="noIconImageDiv" [ngClass]="{'bordered': newIconShowIconCase}">
@@ -115,13 +115,9 @@
 
         <div class="field">
           <label>Icon URL</label>
-          <div class="ui action input">
-          <input type="text" id="_attachmentName" placeholder="Enter icon URL or load from files" [(ngModel)]="newIconIconURL" >
-          <label for="attachmentName" class="ui icon button btn-file">
-              <i class="fa fa-upload"></i>
-              <input type="file" (change)="fileChangeEvent($event)" id="attachmentName" name="attachmentName" style="display: none">
-          </label>
-        </div>
+          
+            <input type="text" placeholder="Enter icon URL or load from files" [(ngModel)]="newIconIconURL" >
+          
         </div>
         
         <div class="field">
@@ -139,6 +135,7 @@
           <button class="ui brown button icon circular" (click)=" newIconBgColor = 'brown';"></button>
           <button class="ui grey button icon circular" (click)=" newIconBgColor = 'grey';"></button>
           <button class="ui black button icon circular" (click)=" newIconBgColor = 'black';"></button>
+          <!-- <button class="ui white button icon circular" (click)=" newIconBgColor = 'white';"></button> -->
         </div>
 
         <div class="field">

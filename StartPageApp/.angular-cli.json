@@ -30,8 +30,7 @@
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/semantic-ui-css/semantic.js",
         "../node_modules/moment/min/moment.min.js",
-        "../node_modules/jquery-contextmenu/dist/jquery.contextMenu.js",
-        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.js"
+        "../node_modules/jquery-contextmenu/dist/jquery.contextMenu.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

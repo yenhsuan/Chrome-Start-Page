@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
+declare let $: any;
+
 @Injectable()
 export class DataService {
 
-  // iconDataArray = new BehaviorSubject<Array<object>>([]);
+  // body, body.pushable > .pusher {
+  // background: url("/assets/defaultWallpaper.jpg") no-repeat center center fixed;
+
   iconArray: Array<object>;
+  wallpaperUrl: string;
+
   constructor() {
 
     let iconStr = this.loadIconsFromLocalStorage();
     if (!iconStr) {
       iconStr = this.loadDefaultIcons();
     }
-
     this.iconArray = JSON.parse(iconStr);
+
+    this.wallpaperUrl = this.loadWallpaperUrlFromLocalStorage();
   }
 
   updateIconsArrayToLocalStorage(): void {
@@ -29,6 +36,19 @@ export class DataService {
     return '';
   }
 
+  loadWallpaperUrlFromLocalStorage(): string {
+    const str = localStorage.getItem('wallpaperUrl');
+    if (str) {
+      return str;
+    }
+    return '../../../assets/defaultWallpaper.jpg';
+  }
+
+  applyWallpaperUrl(): void {
+    localStorage.setItem('wallpaperUrl', this.wallpaperUrl);
+    $('body').css('background', `url(${this.wallpaperUrl}) no-repeat center center fixed`);
+    $('body.pushable .pusher').css('background', `url(${this.wallpaperUrl}) no-repeat center center fixed`);
+  }
 
   loadDefaultIcons(): string {
 
@@ -70,22 +90,6 @@ export class DataService {
         url: 'https://www.linkedin.com',
         iconUrl: '../../assets/icon-alt/LinkedIn.png',
         bgColor: '',
-        corner: 0,
-        showIconCase: true
-      },
-      {
-        name: 'USC',
-        url: 'https://www.usc.edu',
-        iconUrl: '',
-        bgColor: '',
-        corner: 0,
-        showIconCase: true
-      },
-      {
-        name: 'USC',
-        url: 'https://www.usc.edu',
-        iconUrl: '',
-        bgColor: 'red',
         corner: 0,
         showIconCase: true
       }

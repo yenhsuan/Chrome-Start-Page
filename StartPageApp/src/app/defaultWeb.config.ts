@@ -80,9 +80,41 @@ export const defaultWebsite = [
     showIconCase: false
   },
   {
+    name: 'DeviantArt',
+    url: 'https://www.deviantart.com',
+    iconUrl: '../assets/icon-alt/Deviantart.png',
+    bgColor: '',
+    corner: 0,
+    showIconCase: false
+  },
+  {
+    name: 'Digg',
+    url: 'http://digg.com/',
+    iconUrl: '../assets/icon-alt/Digg.png',
+    bgColor: '',
+    corner: 0,
+    showIconCase: false
+  },
+  {
+    name: 'Dribble',
+    url: 'https://dribbble.com/',
+    iconUrl: '../assets/icon-alt/Dribble.png',
+    bgColor: '',
+    corner: 0,
+    showIconCase: false
+  },
+  {
     name: 'Dropbox',
     url: 'https://www.dropbox.com',
     iconUrl: '../assets/icon-alt/Dropbox.png',
+    bgColor: '',
+    corner: 0,
+    showIconCase: false
+  },
+  {
+    name: 'DuckDuckGo',
+    url: 'https://duckduckgo.com/',
+    iconUrl: '../assets/icon-alt/DuckDuckGo.png',
     bgColor: '',
     corner: 0,
     showIconCase: false
@@ -203,6 +235,22 @@ export const defaultWebsite = [
     name: 'iTunes',
     url: 'https://www.apple.com/itunes',
     iconUrl: '../assets/icon-alt/iTunes.png',
+    bgColor: '',
+    corner: 0,
+    showIconCase: false
+  },
+  {
+    name: 'Kickstarter',
+    url: 'https://www.kickstarter.com/',
+    iconUrl: '../assets/icon-alt/Kickstarter.png',
+    bgColor: '',
+    corner: 0,
+    showIconCase: false
+  },
+  {
+    name: 'Lastfm',
+    url: 'https://www.last.fm/',
+    iconUrl: '../assets/icon-alt/Lastfm.png',
     bgColor: '',
     corner: 0,
     showIconCase: false

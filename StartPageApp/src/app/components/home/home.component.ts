@@ -26,7 +26,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     pink           : '#DE3E96',
     brown          : '#A46743',
     grey           : '#767676',
-    black          : '#1B1C1D'
+    black          : '#1B1C1D',
+    white          : '#EEEEEE'
   };
 
 
@@ -124,17 +125,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
       inline: true,
       on    : 'click'
     });
-;
-;
-    console.log(defaultWebsite);
+    // console.log(defaultWebsite);
   }
 
   ngAfterViewInit() {
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event) {
-  }
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event) {
+  // }
 
   mouseWheelDownFunc(): void {
 

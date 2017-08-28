@@ -1,27 +1,28 @@
 <div class="navMenu">
-  <i class="fa fa-star favBtn" aria-hidden="true" (click)="triggerFavPanel()"></i>
-  <i class="fa fa-home" aria-hidden="true" (click)="this.gcRouter.navigateTo('home')"></i>
-  <a href="chrome://apps"><i class="fa fa-windows" aria-hidden="true"></i></a>
-  <i class="fa fa-dot-circle-o" aria-hidden="true" (click)="this.gcRouter.navigateTo('focus')"></i>
-  <i class="fa fa-cog" aria-hidden="true" (click)="this.gcRouter.navigateTo('setting')"></i>
+
+  <i id="chromePages" class="fa fa-chrome"></i>
+  <i class="fa fa-home" (click)="this.gcRouter.navigateTo('home')"></i>
+  <i class="fa fa-dot-circle-o" (click)="this.gcRouter.navigateTo('focus')"></i>
+  <i class="fa fa-cog" (click)="this.gcRouter.navigateTo('setting')"></i>
 </div>
 
-<div id="favSideMenu" class="ui sidebar menu vertical wide">
-  <div class="item sidebarTitle">
-    Bookmark
+<div id="pop1" class="ui flowing popup top left transition hidden">
+  <div class="ui one column divided center aligned grid xx">
+    <div class="column">
+      <h4 class="ui header">Bookmark</h4>
+      <div class="ui button yellow" (click)="openBookMark()"><i class="fa fa-star"></i></div>
+      
+    </div>
+    <div class="column">
+      <h4 class="ui header">Chrome App</h4>
+      <div class="ui button red" (click)="openAppsPage()"><i class="fa fa-google"></i></div>
+    </div>
+
+    <div class="column">
+      <h4 class="ui header">Chrome Setting</h4>
+      <div class="ui button blue" (click)="openChromeSetting()"><i class="fa fa-cog"></i></div>
+    </div>
   </div>
-
-  <a class="item">
-    My Link 1
-  </a>
-  <a class="item">
-    My Link 2
-  </a>
-  <a class="item">
-    NO NO GAY BLUE
-  </a>
 </div>
 
-<div class="pusher">
-</div>
-  
+
