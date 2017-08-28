@@ -87,7 +87,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
             callback: (key: any, opt: any) => {
               const target = opt['$trigger'][0]['id'].substring(7);
               this.newIconTitle = this.iconData[target]['name'];
-              this.newIconURL = this.iconData[target]['url'];
+              this.newIconURL = this.iconData[target]['url'].substring(7);
               this.newIconIconURL = this.iconData[target]['iconUrl'];
               this.newIconBgColor = this.iconData[target]['bgColor'];
               this.newIconShowIconCase = this.iconData[target]['showIconCase'];

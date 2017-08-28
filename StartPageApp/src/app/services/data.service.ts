@@ -55,7 +55,7 @@ export class DataService {
     const defaultIcons = [
       {
         name: 'Facebook',
-        url: 'https://www.facebook.com',
+        url: 'http://www.facebook.com',
         iconUrl: '../../assets/icon-alt/Facebook.png',
         bgColor: '',
         corner: 0,
@@ -63,7 +63,7 @@ export class DataService {
       },
       {
         name: 'Google',
-        url: 'https://www.facebook.com',
+        url: 'http://www.google.com',
         iconUrl: '../../assets/icon-alt/Google.png',
         bgColor: '',
         corner: 0,
@@ -71,7 +71,7 @@ export class DataService {
       },
       {
         name: 'Youtube',
-        url: 'https://www.youtube.com',
+        url: 'http://www.youtube.com',
         iconUrl: '../../assets/icon-alt/Youtube I.png',
         bgColor: '',
         corner: 0,
@@ -79,15 +79,15 @@ export class DataService {
       },
       {
         name: 'Gmail',
-        url: 'https://mail.google.com',
+        url: 'http://mail.google.com',
         iconUrl: '../../assets/icon-alt/Gmail.png',
         bgColor: '',
         corner: 0,
-        showIconCase: false
+        showIconCase: true
       },
       {
         name: 'LinkedIn',
-        url: 'https://www.linkedin.com',
+        url: 'http://www.linkedin.com',
         iconUrl: '../../assets/icon-alt/LinkedIn.png',
         bgColor: '',
         corner: 0,
