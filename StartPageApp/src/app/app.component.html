@@ -1,5 +1,5 @@
-<app-home *ngIf="viewToDisplay == 'home'"></app-home>
-<app-focus *ngIf="viewToDisplay == 'focus'"></app-focus>
-<app-setting *ngIf="viewToDisplay == 'setting'"></app-setting>
-<app-applications *ngIf="viewToDisplay == 'applications'"></app-applications>
+<app-home [hidden]="viewToDisplay != 'home'"></app-home>
+<app-focus [hidden]="viewToDisplay != 'focus'"></app-focus>
+<app-setting [hidden]="viewToDisplay != 'setting'"></app-setting>
+<app-applications [hidden]="viewToDisplay != 'applications'"></app-applications>
 <app-navbar></app-navbar>
