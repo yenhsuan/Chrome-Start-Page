@@ -1,7 +1,9 @@
 .focusDiv {
 	color: white; 
-	height: 100%;
-	padding-top:20%;
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%,-50%);
 }
 
 .focusDiv h1{
