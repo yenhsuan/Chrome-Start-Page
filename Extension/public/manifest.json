@@ -1,0 +1,24 @@
+{
+ "manifest_version": 2,
+ "name": "Chrome Start Page",
+ "description": "An elegant start page",
+ "version": "0.0.2",
+ "browser_action": {
+    "default_icon": "favicon.ico"
+ },
+ "permissions": [
+    "bookmarks",
+    "tabs"
+ ],
+ "chrome_url_overrides" : {
+    "newtab": "index.html"
+ },
+ "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+ "web_accessible_resources": [
+ "assets/css/*",
+ "assets/js/*",
+ "assets/fonts/*",
+ "assets/icon-alt/*",
+ "assets/wallpaper/*"
+ ]
+}
