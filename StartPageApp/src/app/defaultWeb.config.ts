@@ -5,7 +5,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/9Gag.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Amazon',
@@ -13,7 +13,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Amazon.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Android',
@@ -21,7 +21,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Android.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Apple',
@@ -29,7 +29,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Apple.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'App Store',
@@ -37,7 +37,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Appstore.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'AWS',
@@ -45,7 +45,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/AWS.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Bing',
@@ -53,7 +53,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Bing.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Blogger',
@@ -61,7 +61,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Blogger.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'CloudApp',
@@ -69,7 +69,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Cloudapp.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'CSS3',
@@ -77,7 +77,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/CSS3.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'DeviantArt',
@@ -85,7 +85,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Deviantart.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Digg',
@@ -93,7 +93,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Digg.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Dribble',
@@ -101,7 +101,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Dribble.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Dropbox',
@@ -109,7 +109,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Dropbox.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'DuckDuckGo',
@@ -117,7 +117,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/DuckDuckGo.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'eBay',
@@ -125,7 +125,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Ebay.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Evernote',
@@ -133,7 +133,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Evernote.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Facebook',
@@ -141,7 +141,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Facebook.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Firefox',
@@ -149,7 +149,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Firefox.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Flickr',
@@ -157,7 +157,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Flickr.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Github',
@@ -165,7 +165,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Github.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Gmail',
@@ -173,7 +173,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Gmail.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Google Chrome',
@@ -181,7 +181,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Google\ Chrome.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Google Drive',
@@ -189,7 +189,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Google\ Drive.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Google Play',
@@ -197,7 +197,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Google\ Play.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Google Plus',
@@ -205,7 +205,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Google\ Plus.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Google',
@@ -213,7 +213,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Google.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Hangouts',
@@ -221,7 +221,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Hangouts.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Instagram',
@@ -229,7 +229,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Instagram.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'iTunes',
@@ -237,7 +237,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/iTunes.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Kickstarter',
@@ -245,7 +245,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Kickstarter.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Lastfm',
@@ -253,7 +253,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Lastfm.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Line',
@@ -261,7 +261,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Line.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'LinkedIn',
@@ -269,7 +269,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/LinkedIn.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'MSN',
@@ -277,7 +277,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/MSN.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'MySpace',
@@ -285,7 +285,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/MySpace.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Opera',
@@ -293,7 +293,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Opera.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Outlook',
@@ -301,7 +301,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Outlook.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'PayPal',
@@ -309,7 +309,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/PayPal.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Picasa',
@@ -317,7 +317,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Picasa.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Pinboard',
@@ -325,7 +325,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Pinboard.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Pinterest',
@@ -333,7 +333,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Pinterest.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'PlayStation',
@@ -341,7 +341,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Playstation.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Reddit',
@@ -349,7 +349,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Reddit.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'RSS',
@@ -357,7 +357,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/RSS.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Safari',
@@ -365,7 +365,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Safari.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Skype',
@@ -373,7 +373,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Skype.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Slack',
@@ -381,7 +381,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Slack.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Snapchat',
@@ -389,7 +389,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Snapchat.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'SoundCloud',
@@ -397,7 +397,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Soundcloud.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Spotify',
@@ -405,7 +405,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Spotify.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Stack Overflow',
@@ -413,7 +413,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Stackoverflow.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'StumbleUpon',
@@ -421,7 +421,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Stumbleupon.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Tumblr',
@@ -429,7 +429,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Tumblr.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Twitter',
@@ -437,7 +437,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Twitter\ I.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Uber',
@@ -445,7 +445,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Uber.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Viber',
@@ -453,7 +453,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Viber.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Vimeo',
@@ -461,7 +461,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Vimeo.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Vine',
@@ -469,7 +469,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Vine.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'W3C',
@@ -477,7 +477,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/W3C.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Wallet',
@@ -485,7 +485,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Wallet.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'WeChat',
@@ -493,7 +493,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Wechat.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'WhatsApp',
@@ -501,7 +501,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Whatsapp.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Windows Store',
@@ -509,7 +509,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Windows\ Store.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Windows',
@@ -517,7 +517,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Windows.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'WordPress',
@@ -525,7 +525,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/WordPress.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'World Wildlife Fund',
@@ -533,7 +533,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/WWF.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'xbox',
@@ -541,7 +541,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Xbox.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Yahoo',
@@ -549,7 +549,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Yahoo.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Yammer',
@@ -557,7 +557,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Yammer.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Yelp',
@@ -565,7 +565,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Yelp.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Youtube',
@@ -573,7 +573,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Youtube\ II.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
   {
     name: 'Zynga',
@@ -581,7 +581,7 @@ export const defaultWebsite = [
     iconUrl: '../assets/icon-alt/Zynga.png',
     bgColor: '',
     corner: 0,
-    showIconCase: false
+    showIconCase: true
   },
 
 ];
