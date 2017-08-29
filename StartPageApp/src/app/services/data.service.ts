@@ -19,7 +19,6 @@ export class DataService {
       iconStr = this.loadDefaultIcons();
     }
     this.iconArray = JSON.parse(iconStr);
-
     this.wallpaperUrl = this.loadWallpaperUrlFromLocalStorage();
   }
 
