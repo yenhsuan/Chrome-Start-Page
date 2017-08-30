@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   viewToDisplay: string;
 
   constructor(@Inject('gcRouter') private gcRouter, @Inject('data') private data) {
-    this.data.applyWallpaperUrl();
+    // this.data.applyWallpaperUrl();
     this.viewToDisplay = 'home';
   }
 
