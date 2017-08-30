@@ -28,18 +28,20 @@
     z-index: -100;
 }
 
-.fullscreen-bg__video {
+.fullscreen-bg__video iframe {
     position: absolute;
     top: 50%;
     left: 50%;
     width: auto;
     height: auto;
-    min-width: 100%;
-    min-height: 100%;
+    min-width: 150%;
+    min-height: 150%;
     -webkit-transform: translate(-50%, -50%);
        -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+
+    pointer-events: none;
 }
 
 @media (max-width: 767px) {
