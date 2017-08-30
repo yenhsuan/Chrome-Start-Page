@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   show = 1;
   lenShow: number;
   changingPage = false;
- 
+
   editMode = false;
   editIndex = -1;
 
@@ -47,6 +47,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   newIconIconURL = '';
   newIconBgColor = 'blue';
   newIconShowIconCase = false;
+  newIconShowTransparentIconCase = false;
 
   // -------------------------------------
 
@@ -91,6 +92,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
               this.newIconIconURL = this.iconData[target]['iconUrl'];
               this.newIconBgColor = this.iconData[target]['bgColor'];
               this.newIconShowIconCase = this.iconData[target]['showIconCase'];
+              this.newIconShowTransparentIconCase = this.iconData[target]['showTransparentIconCase'];
 
               this.editMode = true;
               this.editIndex = target;
@@ -121,7 +123,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     $('.ui.checkbox').checkbox();
-    $('#addIconTriggerBtn').popup({ 
+    $('#addIconTriggerBtn').popup({
       inline: true,
       on    : 'click'
     });
@@ -175,7 +177,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
         iconUrl: this.newIconIconURL,
         bgColor: this.newIconBgColor,
         corner: 0,
-        showIconCase: this.newIconShowIconCase
+        showIconCase: this.newIconShowIconCase,
+        showTransparentIconCase: this.newIconShowTransparentIconCase
     };
 
     if (this.editMode) {
@@ -201,6 +204,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.newIconIconURL = '';
     this.newIconBgColor = 'blue';
     this.newIconShowIconCase = false;
+    this.newIconShowTransparentIconCase = false;
   }
 
   showSuccess() {
