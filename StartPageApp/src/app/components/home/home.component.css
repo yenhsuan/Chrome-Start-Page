@@ -57,6 +57,13 @@
     max-height: 0px;
 }
 
+.fakeHide {
+    position: fixed;
+    left: -9999px;
+    top: -9999px;
+}
+
+
 /*.icon {
     display:block;
     margin: 0 auto;
@@ -144,6 +151,26 @@
 
 .dotFade {
     opacity: 0.4;
+}
+
+#switchToRight {
+    display:inline-block;
+    position: fixed;
+    width:50px;
+    height:9999px;
+    right:0;
+    top:0;
+    z-index: 9999999;
+}
+
+#switchToLeft {
+    display:inline-block;
+    position: fixed;
+    width:50px;
+    height:9999px;
+    left:0;
+    top:0;
+    z-index: 9999999;
 }
 
 

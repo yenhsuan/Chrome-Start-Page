@@ -1,7 +1,8 @@
 
 <div mouseWheel id="pageDiv" (mouseWheelUp)="mouseWheelUpFunc()" (mouseWheelDown)="mouseWheelDownFunc()">
   <div  class="mainIconContainer ui five column grid" [dragula]='"bag-one"' >
-    <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index" [hidden]="i<(show-1)*15  || i>=show*15">
+<!--     <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index" [hidden]="i<(show-1)*15  || i>=show*15"> -->
+    <div id="icon{{i}}" class=""  *ngFor="let icon of iconData; let i = index" [ngClass]="{ 'fakeHide' : i<(show-1)*15  || i>=show*15, 'column' : !(i<(show-1)*15  || i>=show*15)}">
         <div id="iconDiv{{i}}" class="iconDiv">
           <a href={{icon.url}}>
             <div class="iconImageDiv" *ngIf="icon.iconUrl !== ''">
@@ -172,6 +173,10 @@
   </div>
 
 
+<div id="switchToRight" on-mouseover='mouseEnterRightArea()' on-mouseleave='mouseLeaveRightArea()'>
+</div>
 
+<div id="switchToLeft" on-mouseover='mouseEnterLeftArea()' on-mouseleave='mouseLeaveLeftArea()'>
+</div>
 
 

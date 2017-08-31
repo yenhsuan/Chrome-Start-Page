@@ -30,10 +30,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
     white          : '#EEEEEE'
   };
 
+  // Page Switching
+  onRightArea = false;
+  onLeftArea = false;
+  dragOutOfCurrentArea = false;
+  listenLeftArea: any;
+  listenRightArea: any;
 
+  // ICONS
   iconData = [];
   defaultWebsiteData = [];
-  show = 1;
+  private show :number;
   lenShow: number;
   changingPage = false;
 
@@ -54,7 +61,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(private dragulaService: DragulaService, @Inject('data') private data, public toastr: ToastsManager, vcr: ViewContainerRef) {
 
     this.toastr.setRootViewContainerRef(vcr);
-
+    this.show = 1;
+    console.log('con');
 
     // Get iconArray reference form data service
     this.iconData = this.data.iconArray;
@@ -63,18 +71,25 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     // Dragula drop event listener
     dragulaService.drop.subscribe(( divObj: Array<object>) => {
-      console.log(divObj.slice(1));
+      this.dragOutOfCurrentArea = false;
+      // console.log(divObj.slice(1));
       const iconDivObj = divObj.slice(1)[1]['children'];
       const iconArrayUpdated = [];
       for (let i = 0; i < iconDivObj.length; i++) {
         const idx = iconDivObj[i]['id'].substring(4);
         iconArrayUpdated.push(this.iconData[idx]);
       }
-
       this.data.iconArray = iconArrayUpdated;
       this.data.updateIconsArrayToLocalStorage();
       this.iconData = iconArrayUpdated;
       this.lenShow = Math.ceil(this.data.iconArray.length / 15);
+    });
+
+
+    dragulaService.out.subscribe((value) => {
+      
+      this.dragOutOfCurrentArea = true;
+
     });
 
 
@@ -128,6 +143,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
       on    : 'click'
     });
     // console.log(defaultWebsite);
+
+    setInterval( () => {console.log(this.show), 200} );
   }
 
   ngAfterViewInit() {
@@ -138,6 +155,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // }
 
   mouseWheelDownFunc(): void {
+    console.log('triggered0');
 
     const len = this.iconData.length;
     if ( this.show * 15 < len) {
@@ -150,6 +168,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   mouseWheelUpFunc(): void {
+    console.log('triggered1');
     if (this.show > 1) {
       if (this.changingPage === false) {
         this.changingPage = true;
@@ -158,6 +177,33 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
     }
   }
+
+
+  switchPageRight(): void {
+    console.log('triggered2');
+    const len = this.iconData.length;
+    if ( this.show * 15 < len) {
+      if (this.changingPage === false) {
+        this.changingPage = true;
+        this.show++;
+        setTimeout( () => { this.changingPage = false; } , 500);
+      }
+    }
+  }
+
+  switchPageLeft(): void {
+    console.log('triggered3');
+    if (this.show > 1) {
+      if (this.changingPage === false) {
+        this.changingPage = true;
+        this.show--;
+        setTimeout( () => { this.changingPage = false; } , 500);
+      }
+    }
+  }
+
+
+
 
   showAddNewIconMenu(): void {
     $('#addIconTriggerBtn').popup('hide');
@@ -207,11 +253,37 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.newIconShowTransparentIconCase = false;
   }
 
-  showSuccess() {
-    this.toastr.success('Successfully added website!', 'Success!');
+  showSuccess(): void {
+    this.toastr.success('Successfully added website!', 'Succeif ss!');
   }
 
+  mouseEnterRightArea(): void {
+    this.onRightArea = true;
+    this.listenRightArea = setInterval( () => {
+      if (this.dragOutOfCurrentArea && this.onRightArea) {
+        this.switchPageRight();
+      }
+    },300);
+  }
 
+  mouseEnterLeftArea(): void {
+    this.onLeftArea = true;
+    this.listenLeftArea = setInterval( () => {
+      if (this.dragOutOfCurrentArea && this.onLeftArea) {
+        this.switchPageLeft();
+      }
+    },300);
+  }
+
+  mouseLeaveRightArea(): void {
+    this.onRightArea = false;
+    clearInterval(this.listenRightArea);
+  }
+
+  mouseLeaveLeftArea(): void {
+    this.onLeftArea = false;
+    clearInterval(this.listenLeftArea);
+  }
 
   // fileChangeEvent(fileInput: any) {
   //     console.log('111');
