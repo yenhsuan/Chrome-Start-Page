@@ -15,6 +15,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0;
+    margin-top: 15px;
     background-color: rgba(0,0,0,0.4);
     border-radius: 10px;
 }
@@ -52,4 +53,34 @@
 
 #imageUrlForm > form > input {
     outline: none;
+}
+
+.content, .ui .styled .accordion {
+    /*background-color: rgba(0,0,0,0);*/
+}
+
+.titleLabel {
+    padding: 0px 0px 0px 20px;
+    color: rgba(255,255,255,.9);
+    font-size: .92857143em;
+    font-weight: 700;
+    text-transform: none;
+
+}
+
+.showVideoToggle {
+    padding: 10px 10px 10px 20px;
+    color: rgba(255,255,255,.9);
+    font-size: .92857143em;
+    font-weight: 700;
+    text-transform: none;
+}
+.showVideoToggle label, {
+    color: rgba(255,255,255,.9);
+}
+.ui.toggle.checkbox.showVideoToggle input:checked ~ .box, .ui.toggle.checkbox.showVideoToggle input:checked ~ label{
+    color: rgba(255,255,255,.9) !important;
+}
+.ui.toggle.checkbox.showVideoToggle .box, .ui.toggle.checkbox.showVideoToggle label{
+    color: rgba(255,255,255,.9) !important;
 }

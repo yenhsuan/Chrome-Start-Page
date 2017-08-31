@@ -18,8 +18,12 @@
         <iframe src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> -->
-<div class="fullscreen-bg">
+<div class="fullscreen-bg" *ngIf="showVideo">
     <div class="fullscreen-bg__video">
-        <iframe src="https://www.youtube.com/embed/W0LHTWG-UmQ?autoplay=1&loop=1&rel=0&controls=0&showinfo=0&playlist=W0LHTWG-UmQ&version=3" frameborder="0" allowfullscreen></iframe>
+        <iframe [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
+<!--
+https://www.youtube.com/watch?v=QH2-TGUlwu4
+W0LHTWG-UmQ
+-->
