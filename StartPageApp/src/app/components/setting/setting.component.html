@@ -1,25 +1,92 @@
+<!-- <div id="mainDiv accordion">
+  <div class="title">
+    Background Image
+  </div>
+  <div class="content">
+    <div id="settingPanel">
+      <div id="imageUrlForm" class="ui form inverted">
+        <div class="field" >
+          <label>Background Image URL</label>
+          <!-- <input type="text" placeholder="Image Url" maxlength="" [(ngModel)]="newIconTitle"> -->
 
+
+<!--           <div class="ui action input left icon" [ngClass]="{ loading : imageLoading }">
+            <input type="text" placeholder="Image Url..." [(ngModel)]="customizedImage">
+            <i class="search icon"></i>
+            <button class="ui button" (click)="applyCustomizedImage()">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wallpaperPanel" class="ui five column grid">
+        <div id="wallpaper{{i}}" class="column"  *ngFor="let x of Arr(40).fill(0); let i = index">
+            <img class="thumb"  src = "../../../assets/wallpaper/wallpaper{{i}}.jpg" (click)="setWallpaper(i)">
+        </div>
+    </div>
+  </div>
+  <div class="title">
+    Background Video
+  </div>
+  <div class="content">
+    hi
+  </div>
+</div> -->
 <div id="mainDiv">
+  <div class="ui accordion">
+    <div id="settingPanel" class="title" (click)="setActiveContent(1)" [ngClass]="{'active': activeContent === 1}">
+      <p class="titleLabel">Background Image</p>
+    </div>
+    <div class="content" [ngClass]="{'active': activeContent === 1}">
+      <div id="settingPanel">
+        <div id="imageUrlForm" class="ui form inverted">
+          <div class="field" >
+            <label>Background Image URL</label>
+            <!-- <input type="text" placeholder="Image Url" maxlength="" [(ngModel)]="newIconTitle"> -->
 
-<div id="settingPanel">
-<div id="imageUrlForm" class="ui form inverted">
-  <div class="field" >
-    <label>Background Image URL</label>
-    <!-- <input type="text" placeholder="Image Url" maxlength="" [(ngModel)]="newIconTitle"> -->
+
+            <div class="ui action input left icon" [ngClass]="{ loading : imageLoading }">
+              <input type="text" placeholder="Image Url..." [(ngModel)]="customizedImage">
+              <i class="search icon"></i>
+              <button class="ui button" (click)="applyCustomizedImage()">Apply</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="wallpaperPanel" class="ui five column grid">
+          <div id="wallpaper{{i}}" class="column"  *ngFor="let x of Arr(40).fill(0); let i = index">
+              <img class="thumb"  src = "../../../assets/wallpaper/wallpaper{{i}}.jpg" (click)="setWallpaper(i)">
+          </div>
+      </div>
+    </div>
+
+    <div id="settingPanel" class="title" (click)="setActiveContent(2)" [ngClass]="{'active': activeContent === 2}">
+      <p class="titleLabel">Background Video</p>
+    </div>
+    <div class="content" [ngClass]="{'active': activeContent === 2}">
+      <div id="settingPanel">
+        <div class="ui toggle checkbox showVideoToggle">
+          <input type="checkbox" tabindex="0" [(ngModel)]="showVideo" (ngModelChange)="applyShowVideo()">
+          <label>Show Background Video</label>
+        </div>
+      </div>
+      <div id="settingPanel" *ngIf="showVideo">
+        <div id="imageUrlForm" class="ui form inverted">
+          <div class="field" >
+            <label>Youtube Video URL</label>
+            <!-- <input type="text" placeholder="Image Url" maxlength="" [(ngModel)]="newIconTitle"> -->
 
 
-    <div class="ui action input left icon" [ngClass]="{ loading : imageLoading }">
-      <input type="text" placeholder="Image Url..." [(ngModel)]="customizedImage">
-      <i class="search icon"></i>
-      <button class="ui button" (click)="applyCustomizedImage()">Apply</button>
+            <div class="ui action input left icon" [ngClass]="{ loading : videoLoading }">
+              <input type="text" placeholder="Video Url..." [(ngModel)]="customizedVideo">
+              <i class="search icon"></i>
+              <button class="ui button" (click)="applyCustomizedVideo()">Apply</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-</div>
 
-<div id="wallpaperPanel" class="ui five column grid">
-    <div id="wallpaper{{i}}" class="column"  *ngFor="let x of Arr(40).fill(0); let i = index">
-        <img class="thumb"  src = "../../../assets/wallpaper/wallpaper{{i}}.jpg" (click)="setWallpaper(i)">
-    </div>
-</div>
-</div>

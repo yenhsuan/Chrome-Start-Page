@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
 declare let $: any;
@@ -11,6 +12,10 @@ export class DataService {
 
   iconArray: Array<object>;
   wallpaperUrl: string;
+  videoId: string;
+  showVideo: boolean;
+  videoIdChange: Subject<string> = new BehaviorSubject<string>(null);
+  showVideoChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
 
   constructor() {
 
@@ -20,6 +25,38 @@ export class DataService {
     }
     this.iconArray = JSON.parse(iconStr);
     this.wallpaperUrl = this.loadWallpaperUrlFromLocalStorage();
+    this.showVideo = this.loadShowVideoFromLocalStorage();
+    this.videoId = this.loadVideoIdFromLocalStorage();
+    this.showVideoChange.next(this.showVideo);
+    this.videoIdChange.next(this.videoId);
+  }
+
+  loadVideoIdFromLocalStorage(): string {
+    const str = localStorage.getItem('videoId');
+    if (str) {
+      return str;
+    }
+    return 'W0LHTWG-UmQ';
+  }
+
+  updateVideoIdToLocalStorage(): void {
+    localStorage.setItem('videoId', this.videoId);
+    // broadcast video id changed
+    this.videoIdChange.next(this.videoId);
+  }
+
+  loadShowVideoFromLocalStorage(): boolean {
+    const str = localStorage.getItem('showVideo');
+    if (str) {
+      return JSON.parse(str);
+    }
+    return true;
+  }
+
+  updateShowVideoToLocalStorage(): void {
+    localStorage.setItem('showVideo', JSON.stringify(this.showVideo));
+    // broadcast show video changed
+    this.showVideoChange.next(this.showVideo);
   }
 
   updateIconsArrayToLocalStorage(): void {
