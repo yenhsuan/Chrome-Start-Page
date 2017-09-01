@@ -11,6 +11,7 @@ export class DataService {
   // background: url("/assets/defaultWallpaper.jpg") no-repeat center center fixed;
 
   iconArray: Array<object>;
+  videoIdArray: Array<string>;
   wallpaperUrl: string;
   videoId: string;
   showVideo: boolean;
@@ -24,6 +25,7 @@ export class DataService {
       iconStr = this.loadDefaultIcons();
     }
     this.iconArray = JSON.parse(iconStr);
+    this.videoIdArray = this.loadDefaultVideoIds();
     this.wallpaperUrl = this.loadWallpaperUrlFromLocalStorage();
     this.showVideo = this.loadShowVideoFromLocalStorage();
     this.videoId = this.loadVideoIdFromLocalStorage();
@@ -36,7 +38,7 @@ export class DataService {
     if (str) {
       return str;
     }
-    return 'W0LHTWG-UmQ';
+    return 'jz_QaSnlN6Q';
   }
 
   updateVideoIdToLocalStorage(): void {
@@ -133,7 +135,9 @@ export class DataService {
 
     return JSON.stringify(defaultIcons);
   }
-
+  loadDefaultVideoIds(): Array<string> {
+    return ['PzVA6gYtPc0', 'jz_QaSnlN6Q', 'bucV8Y_p0ME', '0YjLf8T0lUs', 'CmqYwvaAGec', '8IM0CSO7bsc', 'cNFPl30uSl4', 'MELEuPAAdwY', 'qmUiVrUVd_E', 'Cbmkkho3JqY', '_RGVKiQUfqo', 'STYr6DeLIW0', 'W3sAmt2K6UI', 'gKmOzevJMIg', 'ZBc5b8n6H9k', 'tkkSBE0-Tfg', 'qDxCO6VZO4Q', 'OK4HbNzZfAs'];
+  }
 
 
 

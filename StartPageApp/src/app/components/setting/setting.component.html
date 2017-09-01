@@ -86,6 +86,11 @@
           </div>
         </div>
       </div>
+      <div id="wallpaperPanel" class="ui five column grid">
+        <div id="" class="column" *ngFor="let videoId of videoIdArray;">
+          <img class="thumb" [src]="getVideoImageUrl(videoId)" (click)="setDefaultVideo(videoId)">
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -19,7 +19,6 @@ export class FocusComponent implements OnInit {
     this.showVideo = this.data.showVideo;
     this.videoId = this.data.videoId;
     this.videoUrl = sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.videoId}?autoplay=1&loop=1&mute=1&rel=0&controls=0&showinfo=0&playlist=${this.videoId}&version=3`);
-    
 
     this.data.videoIdChange.subscribe((value) => {
       this.videoId = value;
