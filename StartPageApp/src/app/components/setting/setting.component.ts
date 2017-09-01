@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject, ViewContainerRef  } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 
 declare let $: any;
 
@@ -10,18 +11,24 @@ declare let $: any;
 })
 export class SettingComponent implements OnInit {
   Arr = Array;
+  videoIdArray = [];
   customizedImage = '';
   customizedVideo = '';
   showVideo = false;
   videoLoading = false;
   imageLoading = false;
   activeContent = 1;
-  constructor(@Inject('data') private data, public toastr: ToastsManager, vcr: ViewContainerRef) {
+  constructor(@Inject('data') private data, public toastr: ToastsManager, vcr: ViewContainerRef, public sanitizer: DomSanitizer) {
     this.toastr.setRootViewContainerRef(vcr);
     this.showVideo = this.data.showVideo;
+    this.videoIdArray = this.data.videoIdArray;
   }
 
   ngOnInit() {
+  }
+
+  getVideoImageUrl(id: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(`http://img.youtube.com/vi/${id}/0.jpg`);
   }
 
   setWallpaper(id: number) {
@@ -30,11 +37,12 @@ export class SettingComponent implements OnInit {
   }
 
   setActiveContent(id: number) {
-    if (id === this.activeContent) {
-      this.activeContent = 0;
-    }else {
-      this.activeContent = id;
-    }
+    // if (id === this.activeContent) {
+    //   this.activeContent = 0;
+    // }else {
+    //   this.activeContent = id;
+    // }
+    this.activeContent = id;
   }
 
   applyCustomizedImage(): void {
@@ -62,6 +70,15 @@ export class SettingComponent implements OnInit {
     this.data.updateShowVideoToLocalStorage();
   }
 
+
+  setDefaultVideo(id: number): void {
+      this.data.videoId = id;
+      this.data.showVideo = true;
+      this.data.updateVideoIdToLocalStorage();
+      this.data.updateShowVideoToLocalStorage();
+      this.showSuccess();
+  }
+
   applyCustomizedVideo(): void {
     if (!this.customizedVideo.trim()) {
       return;
@@ -74,8 +91,10 @@ export class SettingComponent implements OnInit {
       this.data.updateVideoIdToLocalStorage();
       this.data.updateShowVideoToLocalStorage();
       this.showSuccess();
+      this.customizedVideo = '';
     } else {
       this.showError();
+      this.customizedVideo = '';
     }
   }
   showSuccess() {
