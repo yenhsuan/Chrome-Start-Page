@@ -71,7 +71,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.data.iconArrayChange.subscribe((value) => {
       this.iconData = value;
       this.lenShow = Math.ceil(this.data.iconArray.length / 15);
-      console.log('iconArrayChange in homepage')
     });
 
     // Dragula drop event listener
