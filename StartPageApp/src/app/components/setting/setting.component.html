@@ -1,37 +1,3 @@
-<!-- <div id="mainDiv accordion">
-  <div class="title">
-    Background Image
-  </div>
-  <div class="content">
-    <div id="settingPanel">
-      <div id="imageUrlForm" class="ui form inverted">
-        <div class="field" >
-          <label>Background Image URL</label>
-          <!-- <input type="text" placeholder="Image Url" maxlength="" [(ngModel)]="newIconTitle"> -->
-
-
-<!--           <div class="ui action input left icon" [ngClass]="{ loading : imageLoading }">
-            <input type="text" placeholder="Image Url..." [(ngModel)]="customizedImage">
-            <i class="search icon"></i>
-            <button class="ui button" (click)="applyCustomizedImage()">Apply</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="wallpaperPanel" class="ui five column grid">
-        <div id="wallpaper{{i}}" class="column"  *ngFor="let x of Arr(40).fill(0); let i = index">
-            <img class="thumb"  src = "../../../assets/wallpaper/wallpaper{{i}}.jpg" (click)="setWallpaper(i)">
-        </div>
-    </div>
-  </div>
-  <div class="title">
-    Background Video
-  </div>
-  <div class="content">
-    hi
-  </div>
-</div> -->
 <div id="mainDiv">
   <div class="ui accordion">
     <div class="title settingPanel settingTitlePanel" (click)="setActiveContent(1)" [ngClass]="{'active': activeContent === 1}">
@@ -105,6 +71,17 @@
           <i class="upload icon"></i>
           Upload Setting
         </button>
+        <div class="ui form" *ngIf="uploadSettingArea">
+          <div class="field">
+            <label class="textareaLabel">Copy and Paste Your Setting</label>
+            <textarea [(ngModel)]="userSetting"></textarea>
+            <div class="updateBtn" (click)="updateSetting()">
+              <button class="ui button updateButton">
+                Update
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

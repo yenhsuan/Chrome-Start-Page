@@ -1,6 +1,5 @@
 
 #mainDiv {
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -8,7 +7,6 @@
 }
 
 .settingPanel {
-
     width:50vw;
     min-width: 500px;
     margin-left: auto;
@@ -70,6 +68,27 @@
     text-transform: none;
     text-align: center;
 
+}
+
+.textareaLabel {
+    padding: 10px 10px 10px 0px;
+    color: rgba(255,255,255,.9) !important;
+    font-size: 1.4em;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.updateButton {
+    margin-top: 10px;
+    padding: 10px 10px 10px 10px;
+    font-size: .92857143em;
+    font-weight: 700;
+    text-transform: none;
+}
+
+.updateBtn {
+    align-items: right;
+    text-align: right;
 }
 
 .settingButton {

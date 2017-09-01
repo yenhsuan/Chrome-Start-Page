@@ -19,6 +19,9 @@ export class SettingComponent implements OnInit {
   videoLoading = false;
   imageLoading = false;
   activeContent = 1;
+  uploadSettingArea = false;
+  userSetting = '';
+
   constructor(@Inject('data') private data, public toastr: ToastsManager, vcr: ViewContainerRef, public sanitizer: DomSanitizer) {
     this.toastr.setRootViewContainerRef(vcr);
     this.showVideo = this.data.showVideo;
@@ -117,7 +120,43 @@ export class SettingComponent implements OnInit {
   }
 
   uploadSetting() {
-    console.log('upload');
+    this.uploadSettingArea = true;
+  }
+
+  updateSetting() {
+    try {
+      const setting: any = JSON.parse(this.userSetting);
+      if ('iconArray' in setting || 'wallpaperUrl' in setting || 'videoId' in setting || 'showVideo' in setting) {
+        if ('iconArray' in setting) {
+          this.data.iconArray = setting['iconArray'];
+          this.data.updateIconsArrayToLocalStorage();
+        }
+        if ('wallpaperUrl' in setting) {
+          this.data.wallpaperUrl = setting['wallpaperUrl'];
+          this.data.applyWallpaperUrl();
+        }
+        if ('videoId' in setting) {
+          this.data.videoId = setting['videoId'];
+          this.data.updateVideoIdToLocalStorage();
+        }
+        if ('showVideo' in setting) {
+          this.data.showVideo = setting['showVideo'];
+          this.data.updateShowVideoToLocalStorage();
+        }
+      }else {
+        this.userSetting = '';
+        this.toastr.error('Please enter a valid user setting!', 'Oops!');
+        return;
+      }
+      this.uploadSettingArea = false;
+      this.userSetting = '';
+      this.toastr.success('Successfully update user setting!', 'Success!');
+      return;
+    } catch (e) {
+      this.userSetting = '';
+      this.toastr.error('Please enter a valid user setting!', 'Oops!');
+      return;
+    }
   }
 
 }

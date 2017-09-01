@@ -16,6 +16,7 @@ export class DataService {
   showVideo: boolean;
   videoIdChange: Subject<string> = new BehaviorSubject<string>(null);
   showVideoChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
+  iconArrayChange: Subject<Array<object>> = new BehaviorSubject<Array<object>>(null);
   videoIdArray: Array<string>;
 
   constructor() {
@@ -31,6 +32,7 @@ export class DataService {
     this.videoId = this.loadVideoIdFromLocalStorage();
     this.showVideoChange.next(this.showVideo);
     this.videoIdChange.next(this.videoId);
+    this.iconArrayChange.next(this.iconArray);
   }
 
   loadVideoIdFromLocalStorage(): string {
@@ -63,6 +65,8 @@ export class DataService {
 
   updateIconsArrayToLocalStorage(): void {
     localStorage.setItem('iconArray', JSON.stringify(this.iconArray));
+    // broadcast icon array changed
+    this.iconArrayChange.next(this.iconArray);
   }
 
   loadIconsFromLocalStorage(): string {
