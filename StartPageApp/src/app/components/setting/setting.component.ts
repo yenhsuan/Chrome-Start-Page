@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, ViewContainerRef  } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import * as FileSaver from 'file-saver';
 
 declare let $: any;
 
@@ -103,6 +104,20 @@ export class SettingComponent implements OnInit {
   }
   showError() {
     this.toastr.error('Please enter a valid youtube url!', 'Oops!');
+  }
+
+  downloadSetting() {
+    let setting: object = {};
+    setting['iconArray'] = this.data.iconArray;
+    setting['wallpaperUrl'] = this.data.wallpaperUrl;
+    setting['videoId'] = this.data.videoId;
+    setting['showVideo'] = this.data.showVideo;
+    const blob: Blob = new Blob([JSON.stringify(setting)], {type: 'text/plain;charset=utf-8'});
+    FileSaver.saveAs(blob, 'Start Page Settings.txt');
+  }
+
+  uploadSetting() {
+    console.log('upload');
   }
 
 }

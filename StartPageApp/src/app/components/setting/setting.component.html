@@ -90,6 +90,23 @@
         </div>
       </div>
     </div>
+
+    <div id="settingPanel" class="title" (click)="setActiveContent(3)" [ngClass]="{'active': activeContent === 3}">
+      <p class="titleLabel">Setting</p>
+    </div>
+    <div class="content" [ngClass]="{'active': activeContent === 3}">
+      <div id="settingPanel" class="settingButton">
+        <button class="ui labeled icon button" (click)="downloadSetting()">
+          <i class="download icon"></i>
+          Download Setting
+        </button>
+        <br/><br/>
+        <button class="ui labeled icon button" (click)="uploadSetting()">
+          <i class="upload icon"></i>
+          Upload Setting
+        </button>
+      </div>
+    </div>
   </div>
 </div>
 
