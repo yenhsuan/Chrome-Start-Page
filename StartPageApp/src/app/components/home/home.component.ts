@@ -251,7 +251,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   showSuccess(): void {
-    this.toastr.success('Successfully added website!', 'Succeif ss!');
+    this.toastr.success('Successfully added website!', 'Success!');
   }
 
   mouseEnterRightArea(): void {
