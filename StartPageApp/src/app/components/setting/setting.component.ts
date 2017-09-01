@@ -22,6 +22,7 @@ export class SettingComponent implements OnInit {
     this.toastr.setRootViewContainerRef(vcr);
     this.showVideo = this.data.showVideo;
     this.videoIdArray = this.data.videoIdArray;
+    this.Arr = Array.apply(null, {length: 40}).map(Number.call, Number)
   }
 
   ngOnInit() {
