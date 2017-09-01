@@ -11,12 +11,12 @@ export class DataService {
   // background: url("/assets/defaultWallpaper.jpg") no-repeat center center fixed;
 
   iconArray: Array<object>;
-  videoIdArray: Array<string>;
   wallpaperUrl: string;
   videoId: string;
   showVideo: boolean;
   videoIdChange: Subject<string> = new BehaviorSubject<string>(null);
   showVideoChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
+  videoIdArray: Array<string>;
 
   constructor() {
 

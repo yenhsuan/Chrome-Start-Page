@@ -72,6 +72,13 @@
 
 }
 
+.settingButton {
+    padding: 10px 10px 10px 20px;
+    font-size: .92857143em;
+    font-weight: 700;
+    text-transform: none;
+}
+
 .showVideoToggle {
     padding: 10px 10px 10px 20px;
     color: rgba(255,255,255,.9);
