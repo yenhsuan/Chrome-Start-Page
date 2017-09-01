@@ -91,11 +91,11 @@
       </div>
     </div>
 
-    <div id="settingPanel" class="title" (click)="setActiveContent(3)" [ngClass]="{'active': activeContent === 3}">
+    <div class="title settingPanel settingTitlePanel" (click)="setActiveContent(3)" [ngClass]="{'active': activeContent === 3}">
       <p class="titleLabel">Setting</p>
     </div>
     <div class="content" [ngClass]="{'active': activeContent === 3}">
-      <div id="settingPanel" class="settingButton">
+      <div class="settingPanel settingButton">
         <button class="ui labeled icon button" (click)="downloadSetting()">
           <i class="download icon"></i>
           Download Setting
