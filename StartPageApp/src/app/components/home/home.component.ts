@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // ICONS
   iconData = [];
   defaultWebsiteData = [];
-  private show :number;
+  private show: number;
   lenShow: number;
   changingPage = false;
 
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.toastr.setRootViewContainerRef(vcr);
     this.show = 1;
-    console.log('con');
+
 
     // Get iconArray reference form data service
     this.iconData = this.data.iconArray;
@@ -87,7 +87,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
     dragulaService.out.subscribe((value) => {
-      
       this.dragOutOfCurrentArea = true;
 
     });
@@ -143,8 +142,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       on    : 'click'
     });
     // console.log(defaultWebsite);
-
-    setInterval( () => {console.log(this.show), 200} );
   }
 
   ngAfterViewInit() {
@@ -155,7 +152,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   // }
 
   mouseWheelDownFunc(): void {
-    console.log('triggered0');
 
     const len = this.iconData.length;
     if ( this.show * 15 < len) {
@@ -168,7 +164,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   mouseWheelUpFunc(): void {
-    console.log('triggered1');
     if (this.show > 1) {
       if (this.changingPage === false) {
         this.changingPage = true;
@@ -180,7 +175,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
 
   switchPageRight(): void {
-    console.log('triggered2');
     const len = this.iconData.length;
     if ( this.show * 15 < len) {
       if (this.changingPage === false) {
@@ -192,7 +186,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   switchPageLeft(): void {
-    console.log('triggered3');
     if (this.show > 1) {
       if (this.changingPage === false) {
         this.changingPage = true;
@@ -263,7 +256,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       if (this.dragOutOfCurrentArea && this.onRightArea) {
         this.switchPageRight();
       }
-    },300);
+    }, 300);
   }
 
   mouseEnterLeftArea(): void {
@@ -272,7 +265,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       if (this.dragOutOfCurrentArea && this.onLeftArea) {
         this.switchPageLeft();
       }
-    },300);
+    }, 300);
   }
 
   mouseLeaveRightArea(): void {
@@ -284,20 +277,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.onLeftArea = false;
     clearInterval(this.listenLeftArea);
   }
-
-  // fileChangeEvent(fileInput: any) {
-  //     console.log('111');
-  //     console.log(fileInput);
-  //     if (fileInput.target.files && fileInput.target.files[0]) {
-  //       console.log('111');
-  //       const reader = new FileReader();
-
-  //       reader.onload = function (e : any) {
-  //           $('#preview').attr('src', e.target.result);
-  //       }
-
-  //       reader.readAsDataURL(fileInput.target.files[0]);
-  //     }
-  // }
-
 }

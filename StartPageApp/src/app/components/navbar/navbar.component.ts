@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   }
 
   openAppsPage() {
-    chrome.tabs.create({url: 'chrome://apps'});
+    chrome.tabs.update({url: 'chrome://apps'});
   }
 
   openBookMark() {

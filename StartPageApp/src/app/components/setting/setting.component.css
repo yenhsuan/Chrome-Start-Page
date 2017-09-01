@@ -7,9 +7,8 @@
     transform: translate(-50%,-50%);
 }
 
-#settingPanel {
+.settingPanel {
 
-    
     width:50vw;
     min-width: 500px;
     margin-left: auto;
@@ -20,8 +19,12 @@
     border-radius: 10px;
 }
 
+.settingTitlePanel {
+    background-color: rgba(0,0,0,0.7) !important;
+}
 
-#wallpaperPanel {
+
+.wallpaperPanel {
     border-radius: 10px;
     height:60vh;
     width:50vw;
@@ -36,7 +39,7 @@
     opacity: 0.6;
 }
 
-#wallpaperPanel:hover {
+.wallpaperPanel:hover {
     opacity: 1;
 }
 
@@ -45,13 +48,13 @@
     border-radius: 15px;
 }
 
-#imageUrlForm {
+.imageUrlForm {
     width: 100%;
     opacity: 0.8;
     padding:10px 20px 20px 20px;
 }
 
-#imageUrlForm > form > input {
+.imageUrlForm > form > input {
     outline: none;
 }
 
@@ -62,9 +65,10 @@
 .titleLabel {
     padding: 0px 0px 0px 20px;
     color: rgba(255,255,255,.9);
-    font-size: .92857143em;
+    font-size: 1.4em;
     font-weight: 700;
     text-transform: none;
+    text-align: center;
 
 }
 

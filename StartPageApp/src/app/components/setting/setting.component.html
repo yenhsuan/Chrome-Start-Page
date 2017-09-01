@@ -34,12 +34,12 @@
 </div> -->
 <div id="mainDiv">
   <div class="ui accordion">
-    <div id="settingPanel" class="title" (click)="setActiveContent(1)" [ngClass]="{'active': activeContent === 1}">
+    <div class="title settingPanel settingTitlePanel" (click)="setActiveContent(1)" [ngClass]="{'active': activeContent === 1}">
       <p class="titleLabel">Background Image</p>
     </div>
     <div class="content" [ngClass]="{'active': activeContent === 1}">
-      <div id="settingPanel">
-        <div id="imageUrlForm" class="ui form inverted">
+      <div class="settingPanel">
+        <div class="imageUrlForm ui form inverted">
           <div class="field" >
             <label>Background Image URL</label>
 
@@ -53,25 +53,25 @@
         </div>
       </div>
 
-      <div id="wallpaperPanel" class="ui five column grid">
+      <div class="wallpaperPanel ui five column grid">
           <div id="wallpaper{{i}}" class="column"  *ngFor="let i of Arr;">
               <img class="thumb"  src = "../../../assets/wallpaper/wallpaper{{i}}.jpg" (click)="setWallpaper(i)">
           </div>
       </div>
     </div>
 
-    <div id="settingPanel" class="title" (click)="setActiveContent(2)" [ngClass]="{'active': activeContent === 2}">
+    <div class="title settingPanel settingTitlePanel" (click)="setActiveContent(2)" [ngClass]="{'active': activeContent === 2}">
       <p class="titleLabel">Background Video</p>
     </div>
     <div class="content" [ngClass]="{'active': activeContent === 2}">
-      <div id="settingPanel">
+      <div class="settingPanel">
         <div class="ui toggle checkbox showVideoToggle">
           <input type="checkbox" tabindex="0" [(ngModel)]="showVideo" (ngModelChange)="applyShowVideo()">
           <label>Show Background Video</label>
         </div>
       </div>
-      <div id="settingPanel" *ngIf="showVideo">
-        <div id="imageUrlForm" class="ui form inverted">
+      <div class="settingPanel" *ngIf="showVideo">
+        <div class="imageUrlForm ui form inverted">
           <div class="field" >
             <label>Youtube Video URL</label>
 
@@ -84,8 +84,8 @@
           </div>
         </div>
       </div>
-      <div id="wallpaperPanel" class="ui five column grid">
-        <div id="" class="column" *ngFor="let videoId of videoIdArray;">
+      <div class="wallpaperPanel ui five column grid" *ngIf="showVideo">
+        <div class="column" *ngFor="let videoId of videoIdArray;">
           <img class="thumb" [src]="getVideoImageUrl(videoId)" (click)="setDefaultVideo(videoId)">
         </div>
       </div>
