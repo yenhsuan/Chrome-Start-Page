@@ -22,14 +22,27 @@ export class SettingComponent implements OnInit {
   uploadSettingArea = false;
   userSetting = '';
 
+
+  loadFocus = false;
+
   constructor(@Inject('data') private data, public toastr: ToastsManager, vcr: ViewContainerRef, public sanitizer: DomSanitizer) {
     this.toastr.setRootViewContainerRef(vcr);
     this.showVideo = this.data.showVideo;
     this.videoIdArray = this.data.videoIdArray;
-    this.Arr = Array.apply(null, {length: 40}).map(Number.call, Number)
+    this.Arr = Array.apply(null, {length: 40}).map(Number.call, Number);
+
+    const loadFocusStr = localStorage.getItem('loadFocus');
+    if (loadFocusStr) {
+      this.loadFocus = JSON.parse(loadFocusStr);
+    }
+  }
+
+  setLoadFocus(): void {
+    localStorage.setItem('loadFocus', JSON.stringify( this.loadFocus ));
   }
 
   ngOnInit() {
+    $('.ui.accordion').accordion();
   }
 
   getVideoImageUrl(id: string) {

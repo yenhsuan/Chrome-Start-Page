@@ -1,9 +1,9 @@
 <div id="mainDiv">
   <div class="ui accordion">
-    <div class="title settingPanel settingTitlePanel" (click)="setActiveContent(1)" [ngClass]="{'active': activeContent === 1}">
+    <div class="title settingPanel settingTitlePanel active">
       <p class="titleLabel">Background Image</p>
     </div>
-    <div class="content" [ngClass]="{'active': activeContent === 1}">
+    <div class="content active">
       <div class="settingPanel">
         <div class="imageUrlForm ui form inverted">
           <div class="field" >
@@ -26,10 +26,10 @@
       </div>
     </div>
 
-    <div class="title settingPanel settingTitlePanel" (click)="setActiveContent(2)" [ngClass]="{'active': activeContent === 2}">
+    <div class="title settingPanel settingTitlePanel">
       <p class="titleLabel">Background Video</p>
     </div>
-    <div class="content" [ngClass]="{'active': activeContent === 2}">
+    <div class="content">
       <div class="settingPanel">
         <div class="ui toggle checkbox showVideoToggle">
           <input type="checkbox" tabindex="0" [(ngModel)]="showVideo" (ngModelChange)="applyShowVideo()">
@@ -57,23 +57,30 @@
       </div>
     </div>
 
-    <div class="title settingPanel settingTitlePanel" (click)="setActiveContent(3)" [ngClass]="{'active': activeContent === 3}">
+    <div class="title settingPanel settingTitlePanel">
       <p class="titleLabel">Setting</p>
     </div>
-    <div class="content" [ngClass]="{'active': activeContent === 3}">
+    <div class="content">
       <div class="settingPanel settingButton">
-        <button class="ui labeled icon button" (click)="downloadSetting()">
+        <button class="ui labeled icon button green" (click)="downloadSetting()">
           <i class="download icon"></i>
-          Download Setting
+          Export Settings
         </button>
-        <br/><br/>
-        <button class="ui labeled icon button" (click)="uploadSetting()">
+        <button class="ui labeled icon button yellow" (click)="uploadSetting()">
           <i class="upload icon"></i>
-          Upload Setting
+          Import Settings
         </button>
+        <br />
+        <div class="ui toggle checkbox showVideoToggle">
+          <input type="checkbox" tabindex="0" [(ngModel)]="loadFocus" (ngModelChange)="setLoadFocus()">
+          <label>Use Foucs Page as Primary Page <b>(Experimental)</b></label>
+        </div>
+
+
+
         <div class="ui form" *ngIf="uploadSettingArea">
           <div class="field">
-            <label class="textareaLabel">Copy and Paste Your Setting</label>
+            <label class="textareaLabel">Paste Your Settings</label>
             <textarea [(ngModel)]="userSetting"></textarea>
             <div class="updateBtn" (click)="updateSetting()">
               <button class="ui button updateButton">
@@ -82,6 +89,9 @@
             </div>
           </div>
         </div>
+
+
+
       </div>
     </div>
   </div>

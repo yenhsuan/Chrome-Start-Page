@@ -248,6 +248,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     this.newIconBgColor = 'blue';
     this.newIconShowIconCase = false;
     this.newIconShowTransparentIconCase = false;
+    this.editMode = false;
+    this.editIndex = -1;
   }
 
   showSuccess(): void {
