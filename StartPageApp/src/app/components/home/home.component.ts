@@ -4,6 +4,7 @@ import { defaultWebsite } from '../../defaultWeb.config';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 declare let $: any;
+declare let window: any;
 
 
 @Component({
@@ -55,6 +56,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   newIconBgColor = 'blue';
   newIconShowIconCase = false;
   newIconShowTransparentIconCase = false;
+  searchQuery = '';
 
   // -------------------------------------
 
@@ -282,5 +284,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   mouseLeaveLeftArea(): void {
     this.onLeftArea = false;
     clearInterval(this.listenLeftArea);
+  }
+
+  search(): void {
+    const query = this.searchQuery.replace(/ /g , '+');
+    console.log(query);
+    window.location = 'http://www.google.com/search?q=' + query;
   }
 }
