@@ -2,6 +2,8 @@ import { Component, OnInit, Inject} from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import * as moment from 'moment';
 
+declare let window: any;
+
 @Component({
   selector: 'app-focus',
   templateUrl: './focus.component.html',
@@ -14,6 +16,8 @@ export class FocusComponent implements OnInit {
   showVideo = true;
   videoId = '';
   videoUrl: SafeResourceUrl;
+  showSearchBar = true;
+  searchQuery = '';
 
   constructor(@Inject('data') private data, public sanitizer: DomSanitizer) {
     this.showVideo = this.data.showVideo;
@@ -26,6 +30,11 @@ export class FocusComponent implements OnInit {
     });
     this.data.showVideoChange.subscribe((value) => {
       this.showVideo = value; });
+
+    this.showSearchBar = this.data.showSearchBar;
+
+    this.data.showSearchBarChange.subscribe((value) => {
+      this.showSearchBar = value; });
   }
 
   ngOnInit() {
@@ -36,6 +45,12 @@ export class FocusComponent implements OnInit {
     this.now = moment();
     this.time = this.now.format('hh:mm A');
     this.date = this.now.format('dddd, MMMM DD');
+  }
+
+  search(): void {
+    const query = this.searchQuery.replace(/ /g , '+');
+    console.log(query);
+    window.location = 'http://www.google.com/search?q=' + query;
   }
 
 }
