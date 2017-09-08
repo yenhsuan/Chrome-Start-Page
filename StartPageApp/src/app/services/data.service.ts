@@ -18,8 +18,10 @@ export class DataService {
   showVideoChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
   iconArrayChange: Subject<Array<object>> = new BehaviorSubject<Array<object>>(null);
   videoIdArray: Array<string>;
-  showSearchBar: boolean;
-  showSearchBarChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
+  showSearchBarHome: boolean;
+  showSearchBarHomeChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
+  showSearchBarFocus: boolean;
+  showSearchBarFocusChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
 
   constructor() {
 
@@ -35,22 +37,38 @@ export class DataService {
     this.showVideoChange.next(this.showVideo);
     this.videoIdChange.next(this.videoId);
     this.iconArrayChange.next(this.iconArray);
-    this.showSearchBar = this.loadShowSearchBarFromLocalStorage();
-    this.showSearchBarChange.next(this.showSearchBar);
+    this.showSearchBarHome = this.loadShowSearchBarHomeFromLocalStorage();
+    this.showSearchBarHomeChange.next(this.showSearchBarHome);
+    this.showSearchBarFocus = this.loadShowSearchBarFocusFromLocalStorage();
+    this.showSearchBarFocusChange.next(this.showSearchBarFocus);
   }
 
-  loadShowSearchBarFromLocalStorage(): boolean {
-    const str = localStorage.getItem('showSearchBar');
+  loadShowSearchBarHomeFromLocalStorage(): boolean {
+    const str = localStorage.getItem('showSearchBarHome');
     if (str) {
       return JSON.parse(str);
     }
     return true;
   }
 
-  updateShowSearchBarToLocalStorage(): void {
-    localStorage.setItem('showSearchBar', JSON.stringify(this.showSearchBar));
+  updateShowSearchBarHomeToLocalStorage(): void {
+    localStorage.setItem('showSearchBarHome', JSON.stringify(this.showSearchBarHome));
     // broadcast show video changed
-    this.showSearchBarChange.next(this.showSearchBar);
+    this.showSearchBarHomeChange.next(this.showSearchBarHome);
+  }
+
+  loadShowSearchBarFocusFromLocalStorage(): boolean {
+    const str = localStorage.getItem('showSearchBarFocus');
+    if (str) {
+      return JSON.parse(str);
+    }
+    return true;
+  }
+
+  updateShowSearchBarFocusToLocalStorage(): void {
+    localStorage.setItem('showSearchBarFocus', JSON.stringify(this.showSearchBarFocus));
+    // broadcast show video changed
+    this.showSearchBarFocusChange.next(this.showSearchBarFocus);
   }
 
   loadVideoIdFromLocalStorage(): string {

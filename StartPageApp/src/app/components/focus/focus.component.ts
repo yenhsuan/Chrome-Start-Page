@@ -16,7 +16,7 @@ export class FocusComponent implements OnInit {
   showVideo = true;
   videoId = '';
   videoUrl: SafeResourceUrl;
-  showSearchBar = true;
+  showSearchBarFocus = true;
   searchQuery = '';
 
   constructor(@Inject('data') private data, public sanitizer: DomSanitizer) {
@@ -31,10 +31,10 @@ export class FocusComponent implements OnInit {
     this.data.showVideoChange.subscribe((value) => {
       this.showVideo = value; });
 
-    this.showSearchBar = this.data.showSearchBar;
+    this.showSearchBarFocus = this.data.showSearchBarFocus;
 
-    this.data.showSearchBarChange.subscribe((value) => {
-      this.showSearchBar = value; });
+    this.data.showSearchBarFocusChange.subscribe((value) => {
+      this.showSearchBarFocus = value; });
   }
 
   ngOnInit() {

@@ -90,8 +90,13 @@
 
         </div>
         <div class="ui toggle checkbox showVideoToggle">
-          <input type="checkbox" tabindex="0" [(ngModel)]="showSearchBar" (ngModelChange)="setShowSearchBar()">
-          <label>Show Search Bar</label>
+          <input type="checkbox" tabindex="0" [(ngModel)]="showSearchBarHome" (ngModelChange)="setShowSearchBarHome()">
+          <label>Show Search Bar (Home Page)</label>
+        </div>
+        <br>
+        <div class="ui toggle checkbox showVideoToggle">
+          <input type="checkbox" tabindex="0" [(ngModel)]="showSearchBarFocus" (ngModelChange)="setShowSearchBarFocus()">
+          <label>Show Search Bar (Time Page)</label>
         </div>
         <br>
         <div class="ui toggle checkbox showVideoToggle">
