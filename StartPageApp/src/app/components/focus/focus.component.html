@@ -1,4 +1,12 @@
 <div class="ui container">
+    <div class="ui container searchBarContainer" *ngIf="showSearchBar">
+        <form (ngSubmit)="search()" class="ui fluid action input searchBarInput">
+            <input type="text" placeholder="Search" [(ngModel)]="searchQuery" name="search">
+            <button class="ui icon button searchIcon">
+                <i class="search icon"></i>
+            </button>
+        </form>
+    </div>
     <div class="focusDiv">
         <h1>
           {{[time]}}
