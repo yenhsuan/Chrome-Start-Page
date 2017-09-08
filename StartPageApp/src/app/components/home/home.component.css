@@ -48,6 +48,27 @@
     /*background-color: rgba(0,0,0,0.5);*/
 }
 
+.searchBarContainer {
+    margin-top: 50px !important;
+    width: 50vw;
+}
+
+.searchBarInput input{
+    background-color: rgba(255,255,255,1);
+    border: 1px solid rgba(255,255,255,1);
+    border-radius: 10px;
+}
+
+.searchIcon{
+    z-index: 1000;
+    border-radius: 0 10px 10px 0 !important;
+    background-color: rgba(255,255,255,1) !important;
+}
+
+.searchIcon:hover{
+    cursor: pointer;
+}
+
 .hide {
     display: none !important;
 }

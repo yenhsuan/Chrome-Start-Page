@@ -1,5 +1,13 @@
 
 <div mouseWheel id="pageDiv" (mouseWheelUp)="mouseWheelUpFunc()" (mouseWheelDown)="mouseWheelDownFunc()">
+  <div class="ui container searchBarContainer">
+    <form (ngSubmit)="search()" class="ui fluid action input searchBarInput">
+      <input type="text" placeholder="Search" [(ngModel)]="searchQuery" name="search">
+      <button class="ui icon button searchIcon">
+        <i class="search icon"></i>
+      </button>
+    </form>
+  </div>
   <div  class="mainIconContainer ui five column grid" [dragula]='"bag-one"' >
 <!--     <div id="icon{{i}}" class="column"  *ngFor="let icon of iconData; let i = index" [hidden]="i<(show-1)*15  || i>=show*15"> -->
     <div id="icon{{i}}" class=""  *ngFor="let icon of iconData; let i = index" [ngClass]="{ 'fakeHide' : i<(show-1)*15  || i>=show*15, 'column' : !(i<(show-1)*15  || i>=show*15)}">
