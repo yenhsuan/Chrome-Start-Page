@@ -61,37 +61,43 @@
       <p class="titleLabel">Setting</p>
     </div>
     <div class="content">
-      <div class="settingPanel settingButton">
-        <button class="ui labeled icon button green" (click)="downloadSetting()">
-          <i class="download icon"></i>
-          Export Settings
-        </button>
-        <button class="ui labeled icon button yellow" (click)="uploadSetting()">
-          <i class="upload icon"></i>
-          Import Settings
-        </button>
-        <br />
+      <div class="settingPanel">
+        <div class="settingButton">
+          <button class="ui labeled icon button green" (click)="downloadSetting()">
+            <i class="download icon"></i>
+            Export Settings
+          </button>
+          <button class="ui labeled icon button yellow" (click)="uploadSetting()">
+            <i class="upload icon"></i>
+            Import Settings
+          </button>
+          
+
+
+
+          <div class="ui form" *ngIf="uploadSettingArea">
+            <div class="field">
+              <label class="textareaLabel">Paste Your Settings</label>
+              <textarea [(ngModel)]="userSetting"></textarea>
+              <div class="updateBtn" (click)="updateSetting()">
+                <button class="ui button updateButton">
+                  Update
+                </button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="ui toggle checkbox showVideoToggle">
+          <input type="checkbox" tabindex="0" [(ngModel)]="showSearchBar" (ngModelChange)="setShowSearchBar()">
+          <label>Show Search Bar</label>
+        </div>
+        <br>
         <div class="ui toggle checkbox showVideoToggle">
           <input type="checkbox" tabindex="0" [(ngModel)]="loadFocus" (ngModelChange)="setLoadFocus()">
           <label>Use Foucs Page as Primary Page <b>(Experimental)</b></label>
         </div>
-
-
-
-        <div class="ui form" *ngIf="uploadSettingArea">
-          <div class="field">
-            <label class="textareaLabel">Paste Your Settings</label>
-            <textarea [(ngModel)]="userSetting"></textarea>
-            <div class="updateBtn" (click)="updateSetting()">
-              <button class="ui button updateButton">
-                Update
-              </button>
-            </div>
-          </div>
-        </div>
-
-
-
       </div>
     </div>
   </div>

@@ -21,6 +21,7 @@ export class SettingComponent implements OnInit {
   activeContent = 1;
   uploadSettingArea = false;
   userSetting = '';
+  showSearchBar = true;
 
 
   loadFocus = false;
@@ -31,6 +32,8 @@ export class SettingComponent implements OnInit {
     this.videoIdArray = this.data.videoIdArray;
     this.Arr = Array.apply(null, {length: 40}).map(Number.call, Number);
 
+    this.showSearchBar = this.data.showSearchBar;
+
     const loadFocusStr = localStorage.getItem('loadFocus');
     if (loadFocusStr) {
       this.loadFocus = JSON.parse(loadFocusStr);
@@ -39,6 +42,11 @@ export class SettingComponent implements OnInit {
 
   setLoadFocus(): void {
     localStorage.setItem('loadFocus', JSON.stringify( this.loadFocus ));
+  }
+
+  setShowSearchBar(): void {
+    this.data.showSearchBar = this.showSearchBar;
+    this.data.updateShowSearchBarToLocalStorage();
   }
 
   ngOnInit() {
@@ -128,6 +136,7 @@ export class SettingComponent implements OnInit {
     setting['wallpaperUrl'] = this.data.wallpaperUrl;
     setting['videoId'] = this.data.videoId;
     setting['showVideo'] = this.data.showVideo;
+    setting['showSearchBar'] = this.data.showSearchBar;
     const blob: Blob = new Blob([JSON.stringify(setting)], {type: 'text/plain;charset=utf-8'});
     FileSaver.saveAs(blob, 'Start Page Settings.txt');
   }
@@ -155,6 +164,10 @@ export class SettingComponent implements OnInit {
         if ('showVideo' in setting) {
           this.data.showVideo = setting['showVideo'];
           this.data.updateShowVideoToLocalStorage();
+        }
+        if ('showSearchBar' in setting) {
+          this.data.showSearchBar = setting['showSearchBar'];
+          this.data.updateShowSearchBarToLocalStorage();
         }
       }else {
         this.userSetting = '';

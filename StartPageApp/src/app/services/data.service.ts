@@ -18,6 +18,8 @@ export class DataService {
   showVideoChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
   iconArrayChange: Subject<Array<object>> = new BehaviorSubject<Array<object>>(null);
   videoIdArray: Array<string>;
+  showSearchBar: boolean;
+  showSearchBarChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
 
   constructor() {
 
@@ -33,6 +35,21 @@ export class DataService {
     this.showVideoChange.next(this.showVideo);
     this.videoIdChange.next(this.videoId);
     this.iconArrayChange.next(this.iconArray);
+    this.showSearchBar = this.loadShowSearchBarFromLocalStorage();
+  }
+
+  loadShowSearchBarFromLocalStorage(): boolean {
+    const str = localStorage.getItem('showSearchBar');
+    if (str) {
+      return JSON.parse(str);
+    }
+    return true;
+  }
+
+  updateShowSearchBarToLocalStorage(): void {
+    localStorage.setItem('showSearchBar', JSON.stringify(this.showSearchBar));
+    // broadcast show video changed
+    this.showSearchBarChange.next(this.showSearchBar);
   }
 
   loadVideoIdFromLocalStorage(): string {
