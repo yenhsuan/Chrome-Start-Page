@@ -36,6 +36,7 @@ export class DataService {
     this.videoIdChange.next(this.videoId);
     this.iconArrayChange.next(this.iconArray);
     this.showSearchBar = this.loadShowSearchBarFromLocalStorage();
+    this.showSearchBarChange.next(this.showSearchBar);
   }
 
   loadShowSearchBarFromLocalStorage(): boolean {
