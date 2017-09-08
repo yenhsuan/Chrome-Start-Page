@@ -10,11 +10,13 @@
 	font-size:80px;
 	font-weight: normal;
     text-shadow: 2px 2px 5px #595959;
+    text-align: center;
 }
 .focusDiv h2{
 	font-size:40px;
 	font-weight: normal;
     text-shadow: 2px 2px 5px #595959;
+    text-align: center;
 }
 
 
