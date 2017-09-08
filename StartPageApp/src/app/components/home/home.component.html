@@ -1,6 +1,6 @@
 
 <div mouseWheel id="pageDiv" (mouseWheelUp)="mouseWheelUpFunc()" (mouseWheelDown)="mouseWheelDownFunc()">
-  <div class="ui container searchBarContainer" *ngIf="showSearchBar">
+  <div class="ui container searchBarContainer" *ngIf="showSearchBarHome">
     <form (ngSubmit)="search()" class="ui fluid action input searchBarInput">
       <input type="text" placeholder="Search" [(ngModel)]="searchQuery" name="search">
       <button class="ui icon button searchIcon">

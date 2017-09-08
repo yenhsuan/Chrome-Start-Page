@@ -21,7 +21,8 @@ export class SettingComponent implements OnInit {
   activeContent = 1;
   uploadSettingArea = false;
   userSetting = '';
-  showSearchBar = true;
+  showSearchBarHome = true;
+  showSearchBarFocus = true;
 
 
   loadFocus = false;
@@ -32,7 +33,8 @@ export class SettingComponent implements OnInit {
     this.videoIdArray = this.data.videoIdArray;
     this.Arr = Array.apply(null, {length: 40}).map(Number.call, Number);
 
-    this.showSearchBar = this.data.showSearchBar;
+    this.showSearchBarHome = this.data.showSearchBarHome;
+    this.showSearchBarFocus = this.data.showSearchBarFocus;
 
     const loadFocusStr = localStorage.getItem('loadFocus');
     if (loadFocusStr) {
@@ -44,9 +46,14 @@ export class SettingComponent implements OnInit {
     localStorage.setItem('loadFocus', JSON.stringify( this.loadFocus ));
   }
 
-  setShowSearchBar(): void {
-    this.data.showSearchBar = this.showSearchBar;
-    this.data.updateShowSearchBarToLocalStorage();
+  setShowSearchBarHome(): void {
+    this.data.showSearchBarHome = this.showSearchBarHome;
+    this.data.updateShowSearchBarHomeToLocalStorage();
+  }
+
+  setShowSearchBarFocus(): void {
+    this.data.showSearchBarFocus = this.showSearchBarFocus;
+    this.data.updateShowSearchBarFocusToLocalStorage();
   }
 
   ngOnInit() {
@@ -136,7 +143,8 @@ export class SettingComponent implements OnInit {
     setting['wallpaperUrl'] = this.data.wallpaperUrl;
     setting['videoId'] = this.data.videoId;
     setting['showVideo'] = this.data.showVideo;
-    setting['showSearchBar'] = this.data.showSearchBar;
+    setting['showSearchBarHome'] = this.data.showSearchBarHome;
+    setting['showSearchBarFocus'] = this.data.showSearchBarFocus;
     const blob: Blob = new Blob([JSON.stringify(setting)], {type: 'text/plain;charset=utf-8'});
     FileSaver.saveAs(blob, 'Start Page Settings.txt');
   }
@@ -165,9 +173,13 @@ export class SettingComponent implements OnInit {
           this.data.showVideo = setting['showVideo'];
           this.data.updateShowVideoToLocalStorage();
         }
-        if ('showSearchBar' in setting) {
-          this.data.showSearchBar = setting['showSearchBar'];
-          this.data.updateShowSearchBarToLocalStorage();
+        if ('showSearchBarHome' in setting) {
+          this.data.showSearchBarHome = setting['showSearchBarHome'];
+          this.data.updateShowSearchBarHomeToLocalStorage();
+        }
+        if ('showSearchBarFocus' in setting) {
+          this.data.showSearchBarFocus = setting['showSearchBarFocus'];
+          this.data.updateShowSearchBarFocusToLocalStorage();
         }
       }else {
         this.userSetting = '';

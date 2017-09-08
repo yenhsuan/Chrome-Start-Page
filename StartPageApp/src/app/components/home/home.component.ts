@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   newIconShowIconCase = false;
   newIconShowTransparentIconCase = false;
   searchQuery = '';
-  showSearchBar = true;
+  showSearchBarHome = true;
 
   // -------------------------------------
 
@@ -65,10 +65,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     this.toastr.setRootViewContainerRef(vcr);
     this.show = 1;
-    this.showSearchBar = this.data.showSearchBar;
+    this.showSearchBarHome = this.data.showSearchBarHome;
 
-    this.data.showSearchBarChange.subscribe((value) => {
-      this.showSearchBar = value; });
+    this.data.showSearchBarHomeChange.subscribe((value) => {
+      this.showSearchBarHome = value; });
 
 
     // Get iconArray reference form data service
