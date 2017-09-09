@@ -3,6 +3,7 @@ import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject, Observable } from 'rxjs/Rx';
 
 declare let $: any;
+declare let chrome: any;
 
 @Injectable()
 export class DataService {
@@ -24,7 +25,6 @@ export class DataService {
   showSearchBarFocusChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
 
   constructor() {
-
     let iconStr = this.loadIconsFromLocalStorage();
     if (!iconStr) {
       iconStr = this.loadDefaultIcons();
@@ -44,86 +44,226 @@ export class DataService {
   }
 
   loadShowSearchBarHomeFromLocalStorage(): boolean {
-    const str = localStorage.getItem('showSearchBarHome');
-    if (str) {
-      return JSON.parse(str);
+    const self = this;
+    let str;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.get('showSearchBarHome', function(item){
+        str = item['showSearchBarHome'];
+        if (str) {
+          self.showSearchBarHome = JSON.parse(str);
+          self.showSearchBarHomeChange.next(self.showSearchBarHome);
+          return JSON.parse(str);
+        }
+        self.showSearchBarHome = true;
+        self.showSearchBarHomeChange.next(self.showSearchBarHome);
+        return true;
+      });
+    }else {
+      str = localStorage.getItem('showSearchBarHome');
+      if (str) {
+        return JSON.parse(str);
+      }
+      return true;
     }
-    return true;
   }
 
   updateShowSearchBarHomeToLocalStorage(): void {
-    localStorage.setItem('showSearchBarHome', JSON.stringify(this.showSearchBarHome));
+    const self = this;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.set({'showSearchBarHome': JSON.stringify(this.showSearchBarHome)}, function(){
+        console.log('set showSearchBarHome ' + JSON.stringify(self.showSearchBarHome))
+      });
+    }else {
+      localStorage.setItem('showSearchBarHome', JSON.stringify(this.showSearchBarHome));
+    }
     // broadcast show video changed
     this.showSearchBarHomeChange.next(this.showSearchBarHome);
   }
 
   loadShowSearchBarFocusFromLocalStorage(): boolean {
-    const str = localStorage.getItem('showSearchBarFocus');
-    if (str) {
-      return JSON.parse(str);
+    const self = this;
+    let str;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.get('showSearchBarFocus', function(item){
+        str = item['showSearchBarFocus'];
+        if (str) {
+          self.showSearchBarFocus = JSON.parse(str);
+          self.showSearchBarFocusChange.next(self.showSearchBarFocus);
+          return JSON.parse(str);
+        }
+        self.showSearchBarFocus = true;
+        self.showSearchBarFocusChange.next(self.showSearchBarFocus);
+        return true;
+      });
+    }else {
+      str = localStorage.getItem('showSearchBarFocus');
+      if (str) {
+        return JSON.parse(str);
+      }
+      return true;
     }
-    return true;
   }
 
   updateShowSearchBarFocusToLocalStorage(): void {
-    localStorage.setItem('showSearchBarFocus', JSON.stringify(this.showSearchBarFocus));
+    const self = this;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.set({'showSearchBarFocus': JSON.stringify(this.showSearchBarFocus)}, function(){
+        console.log('set showSearchBarFocus ' + JSON.stringify(self.showSearchBarFocus));
+      });
+    }else {
+      localStorage.setItem('showSearchBarFocus', JSON.stringify(this.showSearchBarFocus));
+    }
     // broadcast show video changed
     this.showSearchBarFocusChange.next(this.showSearchBarFocus);
   }
 
   loadVideoIdFromLocalStorage(): string {
-    const str = localStorage.getItem('videoId');
-    if (str) {
-      return str;
+    const self = this;
+    let str;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.get('videoId', function(item){
+        str = item['videoId'];
+        if (str) {
+          self.videoId = str;
+          self.videoIdChange.next(self.videoId);
+          return str;
+        }
+        self.videoId = 'PzVA6gYtPc0';
+        self.videoIdChange.next(self.videoId);
+        return 'PzVA6gYtPc0';
+      });
+    }else {
+      str = localStorage.getItem('videoId');
+      if (str) {
+        return str;
+      }
+      return 'PzVA6gYtPc0';
     }
-    return 'PzVA6gYtPc0';
   }
 
   updateVideoIdToLocalStorage(): void {
-    localStorage.setItem('videoId', this.videoId);
+    const self = this;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.set({'videoId': this.videoId}, function(){
+        console.log('set videoId ' + self.videoId);
+      });
+    }else {
+      localStorage.setItem('videoId', this.videoId);
+    }
     // broadcast video id changed
     this.videoIdChange.next(this.videoId);
   }
 
   loadShowVideoFromLocalStorage(): boolean {
-    const str = localStorage.getItem('showVideo');
-    if (str) {
-      return JSON.parse(str);
+    const self = this;
+    let str;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.get('showVideo', function(item){
+        str = item['showVideo'];
+        if (str) {
+          self.showVideo = JSON.parse(str);
+          self.showVideoChange.next(self.showVideo);
+          return JSON.parse(str);
+        }
+        self.showVideo = true;
+        self.showVideoChange.next(self.showVideo);
+        return true;
+      });
+    }else {
+      str = localStorage.getItem('showVideo');
+      if (str) {
+        return JSON.parse(str);
+      }
+      return true;
     }
-    return true;
   }
 
   updateShowVideoToLocalStorage(): void {
-    localStorage.setItem('showVideo', JSON.stringify(this.showVideo));
+    const self = this;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.set({'showVideo': JSON.stringify(this.showVideo)}, function(){
+        console.log('set showVideo ' + JSON.stringify(self.showVideo));
+      });
+    }else {
+      localStorage.setItem('showVideo', JSON.stringify(this.showVideo));
+    }
     // broadcast show video changed
     this.showVideoChange.next(this.showVideo);
   }
 
   updateIconsArrayToLocalStorage(): void {
-    localStorage.setItem('iconArray', JSON.stringify(this.iconArray));
+    const self = this;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.set({'iconArray': JSON.stringify(this.iconArray)}, function(){
+        console.log('set iconArray ' + JSON.stringify(self.iconArray));
+      });
+    }else {
+      localStorage.setItem('iconArray', JSON.stringify(this.iconArray));
+    }
     // broadcast icon array changed
     this.iconArrayChange.next(this.iconArray);
   }
 
   loadIconsFromLocalStorage(): string {
-    const str = localStorage.getItem('iconArray');
-    if (str) {
-      return str;
-    }
+    const self = this;
+    let str;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.get('iconArray', function(item){
+        str = item['iconArray'];
+        if (str) {
+          self.iconArray = JSON.parse(str);
+          self.iconArrayChange.next(self.iconArray);
+          return str;
+        }
+        self.iconArray = JSON.parse(self.loadDefaultIcons());
+        self.iconArrayChange.next(self.iconArray);
+        return '';
+      });
+    }else {
+      str = localStorage.getItem('iconArray');
+      if (str) {
+        return str;
+      }
 
-    return '';
+      return '';
+    }
   }
 
   loadWallpaperUrlFromLocalStorage(): string {
-    const str = localStorage.getItem('wallpaperUrl');
-    if (str) {
-      return str;
+    const self = this;
+    let str;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.get('wallpaperUrl', function(item){
+        str = item['wallpaperUrl'];
+        if (str) {
+          self.wallpaperUrl = str;
+          $('body').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
+          $('body.pushable .pusher').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
+          return str;
+        }
+        self.wallpaperUrl = '../../../assets/defaultWallpaper.jpg';
+        $('body').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
+        $('body.pushable .pusher').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
+        return '../../../assets/defaultWallpaper.jpg';
+      });
+    }else {
+      str = localStorage.getItem('wallpaperUrl');
+      if (str) {
+        return str;
+      }
+      return '../../../assets/defaultWallpaper.jpg';
     }
-    return '../../../assets/defaultWallpaper.jpg';
   }
 
   applyWallpaperUrl(): void {
-    localStorage.setItem('wallpaperUrl', this.wallpaperUrl);
+    const self = this;
+    if (chrome && chrome.storage) {
+      chrome.storage.sync.set({'wallpaperUrl': this.wallpaperUrl}, function(){
+        console.log('set wallpaperUrl ' + self.wallpaperUrl);
+      });
+    }else {
+      localStorage.setItem('wallpaperUrl', this.wallpaperUrl);
+    }
     $('body').css('background', `url(${this.wallpaperUrl}) no-repeat center center fixed`);
     $('body.pushable .pusher').css('background', `url(${this.wallpaperUrl}) no-repeat center center fixed`);
   }
