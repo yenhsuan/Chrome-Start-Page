@@ -4,6 +4,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import * as FileSaver from 'file-saver';
 
 declare let $: any;
+declare let chrome: any;
 
 @Component({
   selector: 'app-setting',
@@ -28,6 +29,7 @@ export class SettingComponent implements OnInit {
   loadFocus = false;
 
   constructor(@Inject('data') private data, public toastr: ToastsManager, vcr: ViewContainerRef, public sanitizer: DomSanitizer) {
+
     this.toastr.setRootViewContainerRef(vcr);
     this.showVideo = this.data.showVideo;
     this.videoIdArray = this.data.videoIdArray;
@@ -36,7 +38,17 @@ export class SettingComponent implements OnInit {
     this.showSearchBarHome = this.data.showSearchBarHome;
     this.showSearchBarFocus = this.data.showSearchBarFocus;
 
-    const loadFocusStr = localStorage.getItem('loadFocus');
+    this.data.showVideoChange.subscribe((value) => {
+      this.showVideo = value; });
+
+    this.data.showSearchBarHomeChange.subscribe((value) => {
+      this.showSearchBarHome = value; });
+
+    this.data.showSearchBarFocusChange.subscribe((value) => {
+      this.showSearchBarFocus = value; });
+
+    let loadFocusStr;
+    loadFocusStr = localStorage.getItem('loadFocus');
     if (loadFocusStr) {
       this.loadFocus = JSON.parse(loadFocusStr);
     }
