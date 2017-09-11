@@ -56,9 +56,10 @@ export class DataService {
         }
         self.showSearchBarHome = true;
         self.showSearchBarHomeChange.next(self.showSearchBarHome);
+        self.updateShowSearchBarHomeToLocalStorage();
         return true;
       });
-    }else {
+    } else {
       str = localStorage.getItem('showSearchBarHome');
       if (str) {
         return JSON.parse(str);
@@ -93,6 +94,7 @@ export class DataService {
         }
         self.showSearchBarFocus = true;
         self.showSearchBarFocusChange.next(self.showSearchBarFocus);
+        self.updateShowSearchBarFocusToLocalStorage();
         return true;
       });
     }else {
@@ -130,6 +132,7 @@ export class DataService {
         }
         self.videoId = 'PzVA6gYtPc0';
         self.videoIdChange.next(self.videoId);
+        self.updateVideoIdToLocalStorage();
         return 'PzVA6gYtPc0';
       });
     }else {
@@ -167,6 +170,7 @@ export class DataService {
         }
         self.showVideo = true;
         self.showVideoChange.next(self.showVideo);
+        self.updateShowVideoToLocalStorage();
         return true;
       });
     }else {
@@ -217,6 +221,7 @@ export class DataService {
         }
         self.iconArray = JSON.parse(self.loadDefaultIcons());
         self.iconArrayChange.next(self.iconArray);
+        self.updateIconsArrayToLocalStorage();
         return '';
       });
     }else {
@@ -237,13 +242,14 @@ export class DataService {
         str = item['wallpaperUrl'];
         if (str) {
           self.wallpaperUrl = str;
-          $('body').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
-          $('body.pushable .pusher').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
+          // $('body').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
+          // $('body.pushable .pusher').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
           return str;
         }
         self.wallpaperUrl = '../../../assets/defaultWallpaper.jpg';
-        $('body').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
-        $('body.pushable .pusher').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
+        // $('body').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
+        // $('body.pushable .pusher').css('background', `url(${self.wallpaperUrl}) no-repeat center center fixed`);
+
         return '../../../assets/defaultWallpaper.jpg';
       });
     }else {
