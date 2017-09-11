@@ -25,11 +25,12 @@ export class DataService {
   showSearchBarFocusChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
 
   constructor() {
-    let iconStr = this.loadIconsFromLocalStorage();
-    if (!iconStr) {
-      iconStr = this.loadDefaultIcons();
-    }
-    this.iconArray = JSON.parse(iconStr);
+    // let iconStr = this.loadIconsFromLocalStorage();
+
+    // if (!iconStr) {
+    //   iconStr = this.loadDefaultIcons();
+    // }
+    this.loadIconsFromLocalStorage();
     this.videoIdArray = this.loadDefaultVideoIds();
     this.wallpaperUrl = this.loadWallpaperUrlFromLocalStorage();
     this.showVideo = this.loadShowVideoFromLocalStorage();
@@ -197,40 +198,38 @@ export class DataService {
 
   updateIconsArrayToLocalStorage(): void {
     const self = this;
+
     if (chrome && chrome.storage) {
       chrome.storage.sync.set({'iconArray': JSON.stringify(this.iconArray)}, function(){
         console.log('set iconArray ' + JSON.stringify(self.iconArray));
       });
-    }else {
-      localStorage.setItem('iconArray', JSON.stringify(this.iconArray));
     }
-    // broadcast icon array changed
+    localStorage.setItem('iconArray', JSON.stringify(this.iconArray));
     this.iconArrayChange.next(this.iconArray);
   }
 
-  loadIconsFromLocalStorage(): string {
+  loadIconsFromLocalStorage(): void {
     const self = this;
-    let str;
+    const strTmp = localStorage.getItem('iconArray');
+    if (strTmp) {
+      this.iconArray = JSON.parse(strTmp);
+    }
+
     if (chrome && chrome.storage) {
       chrome.storage.sync.get('iconArray', function(item){
-        str = item['iconArray'];
+        const str = item['iconArray'];
         if (str) {
           self.iconArray = JSON.parse(str);
           self.iconArrayChange.next(self.iconArray);
-          return str;
+          return;
         }
-        self.iconArray = JSON.parse(self.loadDefaultIcons());
-        self.iconArrayChange.next(self.iconArray);
-        self.updateIconsArrayToLocalStorage();
-        return '';
-      });
-    }else {
-      str = localStorage.getItem('iconArray');
-      if (str) {
-        return str;
-      }
 
-      return '';
+        if (!strTmp) {
+          self.iconArray = JSON.parse(self.loadDefaultIcons());
+          self.iconArrayChange.next(self.iconArray);
+          self.updateIconsArrayToLocalStorage();
+        }
+      });
     }
   }
 
