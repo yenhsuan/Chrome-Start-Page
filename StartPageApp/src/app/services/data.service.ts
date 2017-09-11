@@ -25,47 +25,45 @@ export class DataService {
   showSearchBarFocusChange: Subject<boolean> = new BehaviorSubject<boolean>(null);
 
   constructor() {
-    // let iconStr = this.loadIconsFromLocalStorage();
 
-    // if (!iconStr) {
-    //   iconStr = this.loadDefaultIcons();
-    // }
     this.loadIconsFromLocalStorage();
-    this.videoIdArray = this.loadDefaultVideoIds();
+
     this.wallpaperUrl = this.loadWallpaperUrlFromLocalStorage();
-    this.showVideo = this.loadShowVideoFromLocalStorage();
-    this.videoId = this.loadVideoIdFromLocalStorage();
+    this.videoIdArray = this.loadDefaultVideoIds();
+
+
+    this.loadShowVideoFromLocalStorage();
+    this.loadVideoIdFromLocalStorage();
+
     this.showVideoChange.next(this.showVideo);
     this.videoIdChange.next(this.videoId);
     this.iconArrayChange.next(this.iconArray);
-    this.showSearchBarHome = this.loadShowSearchBarHomeFromLocalStorage();
+
+    this.loadShowSearchBarHomeFromLocalStorage();
     this.showSearchBarHomeChange.next(this.showSearchBarHome);
-    this.showSearchBarFocus = this.loadShowSearchBarFocusFromLocalStorage();
+
+    this.loadShowSearchBarFocusFromLocalStorage();
     this.showSearchBarFocusChange.next(this.showSearchBarFocus);
   }
 
-  loadShowSearchBarHomeFromLocalStorage(): boolean {
+  loadShowSearchBarHomeFromLocalStorage(): void {
     const self = this;
-    let str;
+    let str = localStorage.getItem('showSearchBarHome');
+    if (str) {
+      this.showSearchBarHome = JSON.parse(str);
+    } else {
+      this.showSearchBarHome = true;
+    }
+
     if (chrome && chrome.storage) {
       chrome.storage.sync.get('showSearchBarHome', function(item){
         str = item['showSearchBarHome'];
         if (str) {
           self.showSearchBarHome = JSON.parse(str);
           self.showSearchBarHomeChange.next(self.showSearchBarHome);
-          return JSON.parse(str);
         }
-        self.showSearchBarHome = true;
-        self.showSearchBarHomeChange.next(self.showSearchBarHome);
         self.updateShowSearchBarHomeToLocalStorage();
-        return true;
       });
-    } else {
-      str = localStorage.getItem('showSearchBarHome');
-      if (str) {
-        return JSON.parse(str);
-      }
-      return true;
     }
   }
 
@@ -73,37 +71,29 @@ export class DataService {
     const self = this;
     if (chrome && chrome.storage) {
       chrome.storage.sync.set({'showSearchBarHome': JSON.stringify(this.showSearchBarHome)}, function(){
-        console.log('set showSearchBarHome ' + JSON.stringify(self.showSearchBarHome))
       });
-    }else {
-      localStorage.setItem('showSearchBarHome', JSON.stringify(this.showSearchBarHome));
-    }
-    // broadcast show video changed
+    localStorage.setItem('showSearchBarHome', JSON.stringify(this.showSearchBarHome));
     this.showSearchBarHomeChange.next(this.showSearchBarHome);
+    }
   }
 
-  loadShowSearchBarFocusFromLocalStorage(): boolean {
+  loadShowSearchBarFocusFromLocalStorage(): void {
     const self = this;
-    let str;
+    let str = localStorage.getItem('showSearchBarFocus');
+    if (str) {
+      return JSON.parse(str);
+    } else {
+      this.showSearchBarFocus = true;
+    }
     if (chrome && chrome.storage) {
       chrome.storage.sync.get('showSearchBarFocus', function(item){
         str = item['showSearchBarFocus'];
         if (str) {
           self.showSearchBarFocus = JSON.parse(str);
           self.showSearchBarFocusChange.next(self.showSearchBarFocus);
-          return JSON.parse(str);
         }
-        self.showSearchBarFocus = true;
-        self.showSearchBarFocusChange.next(self.showSearchBarFocus);
         self.updateShowSearchBarFocusToLocalStorage();
-        return true;
       });
-    }else {
-      str = localStorage.getItem('showSearchBarFocus');
-      if (str) {
-        return JSON.parse(str);
-      }
-      return true;
     }
   }
 
@@ -111,37 +101,30 @@ export class DataService {
     const self = this;
     if (chrome && chrome.storage) {
       chrome.storage.sync.set({'showSearchBarFocus': JSON.stringify(this.showSearchBarFocus)}, function(){
-        console.log('set showSearchBarFocus ' + JSON.stringify(self.showSearchBarFocus));
       });
-    }else {
-      localStorage.setItem('showSearchBarFocus', JSON.stringify(this.showSearchBarFocus));
     }
-    // broadcast show video changed
+    localStorage.setItem('showSearchBarFocus', JSON.stringify(this.showSearchBarFocus));
     this.showSearchBarFocusChange.next(this.showSearchBarFocus);
   }
 
-  loadVideoIdFromLocalStorage(): string {
+  loadVideoIdFromLocalStorage(): void {
     const self = this;
-    let str;
+    const str = localStorage.getItem('videoId');
+    if (str) {
+      this.videoId = str;
+    } else {
+      this.videoId = 'PzVA6gYtPc0';
+    }
+
     if (chrome && chrome.storage) {
       chrome.storage.sync.get('videoId', function(item){
-        str = item['videoId'];
-        if (str) {
-          self.videoId = str;
+        const strTmp = item['videoId'];
+        if (strTmp && (strTmp !== self.videoId)) {
+          self.videoId = strTmp;
           self.videoIdChange.next(self.videoId);
-          return str;
         }
-        self.videoId = 'PzVA6gYtPc0';
-        self.videoIdChange.next(self.videoId);
         self.updateVideoIdToLocalStorage();
-        return 'PzVA6gYtPc0';
       });
-    }else {
-      str = localStorage.getItem('videoId');
-      if (str) {
-        return str;
-      }
-      return 'PzVA6gYtPc0';
     }
   }
 
@@ -149,37 +132,33 @@ export class DataService {
     const self = this;
     if (chrome && chrome.storage) {
       chrome.storage.sync.set({'videoId': this.videoId}, function(){
-        console.log('set videoId ' + self.videoId);
+        // console.log('set videoId ' + self.videoId);
       });
-    }else {
-      localStorage.setItem('videoId', this.videoId);
     }
-    // broadcast video id changed
-    this.videoIdChange.next(this.videoId);
+    if (this.videoId !== localStorage.getItem('videoId')) {
+      localStorage.setItem('videoId', this.videoId);
+      this.videoIdChange.next(this.videoId);
+    }
   }
 
-  loadShowVideoFromLocalStorage(): boolean {
+  loadShowVideoFromLocalStorage(): void {
     const self = this;
-    let str;
+    let str = localStorage.getItem('showVideo');
+    if (str) {
+        this.showVideo = JSON.parse(str);
+    } else {
+      this.showVideo = true;
+    }
+
     if (chrome && chrome.storage) {
       chrome.storage.sync.get('showVideo', function(item){
         str = item['showVideo'];
         if (str) {
           self.showVideo = JSON.parse(str);
           self.showVideoChange.next(self.showVideo);
-          return JSON.parse(str);
         }
-        self.showVideo = true;
-        self.showVideoChange.next(self.showVideo);
         self.updateShowVideoToLocalStorage();
-        return true;
       });
-    }else {
-      str = localStorage.getItem('showVideo');
-      if (str) {
-        return JSON.parse(str);
-      }
-      return true;
     }
   }
 
@@ -187,12 +166,10 @@ export class DataService {
     const self = this;
     if (chrome && chrome.storage) {
       chrome.storage.sync.set({'showVideo': JSON.stringify(this.showVideo)}, function(){
-        console.log('set showVideo ' + JSON.stringify(self.showVideo));
+        // console.log('set showVideo ' + JSON.stringify(self.showVideo));
       });
-    }else {
-      localStorage.setItem('showVideo', JSON.stringify(this.showVideo));
     }
-    // broadcast show video changed
+    localStorage.setItem('showVideo', JSON.stringify(this.showVideo));
     this.showVideoChange.next(this.showVideo);
   }
 
@@ -201,7 +178,7 @@ export class DataService {
 
     if (chrome && chrome.storage) {
       chrome.storage.sync.set({'iconArray': JSON.stringify(this.iconArray)}, function(){
-        console.log('set iconArray ' + JSON.stringify(self.iconArray));
+        // console.log('set iconArray ' + JSON.stringify(self.iconArray));
       });
     }
     localStorage.setItem('iconArray', JSON.stringify(this.iconArray));
@@ -220,16 +197,16 @@ export class DataService {
         const str = item['iconArray'];
         if (str) {
           self.iconArray = JSON.parse(str);
+          self.updateIconsArrayToLocalStorage();
           self.iconArrayChange.next(self.iconArray);
           return;
         }
-
-        if (!strTmp) {
-          self.iconArray = JSON.parse(self.loadDefaultIcons());
-          self.iconArrayChange.next(self.iconArray);
-          self.updateIconsArrayToLocalStorage();
-        }
       });
+    }
+
+    if (!strTmp) {
+      self.iconArray = JSON.parse(self.loadDefaultIcons());
+      self.iconArrayChange.next(self.iconArray);
     }
   }
 
@@ -264,7 +241,7 @@ export class DataService {
     const self = this;
     if (chrome && chrome.storage) {
       chrome.storage.sync.set({'wallpaperUrl': this.wallpaperUrl}, function(){
-        console.log('set wallpaperUrl ' + self.wallpaperUrl);
+        // console.log('set wallpaperUrl ' + self.wallpaperUrl);
       });
     }else {
       localStorage.setItem('wallpaperUrl', this.wallpaperUrl);
@@ -321,7 +298,24 @@ export class DataService {
     return JSON.stringify(defaultIcons);
   }
   loadDefaultVideoIds(): Array<string> {
-    return ['PzVA6gYtPc0', 'jz_QaSnlN6Q', 'bucV8Y_p0ME', '0YjLf8T0lUs', 'CmqYwvaAGec', '8IM0CSO7bsc', 'cNFPl30uSl4', 'MELEuPAAdwY', 'qmUiVrUVd_E', 'Cbmkkho3JqY', '_RGVKiQUfqo', 'STYr6DeLIW0', 'W3sAmt2K6UI', 'gKmOzevJMIg', 'ZBc5b8n6H9k', 'tkkSBE0-Tfg', 'qDxCO6VZO4Q', 'OK4HbNzZfAs'];
+    return ['PzVA6gYtPc0',
+            'jz_QaSnlN6Q',
+            'bucV8Y_p0ME',
+            '0YjLf8T0lUs',
+            'CmqYwvaAGec',
+            '8IM0CSO7bsc',
+            'cNFPl30uSl4',
+            'MELEuPAAdwY',
+            'qmUiVrUVd_E',
+            'Cbmkkho3JqY',
+            '_RGVKiQUfqo',
+            'STYr6DeLIW0',
+            'W3sAmt2K6UI',
+            'gKmOzevJMIg',
+            'ZBc5b8n6H9k',
+            'tkkSBE0-Tfg',
+            'qDxCO6VZO4Q',
+            'OK4HbNzZfAs'];
   }
 
 
