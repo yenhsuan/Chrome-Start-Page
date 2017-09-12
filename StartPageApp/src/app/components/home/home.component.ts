@@ -113,7 +113,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
             callback: (key: any, opt: any) => {
               const target = opt['$trigger'][0]['id'].substring(7);
               this.newIconTitle = this.iconData[target]['name'];
-              this.newIconURL = this.iconData[target]['url'].substring(7);
+              this.newIconURL = this.iconData[target]['url']; // .substring(7);
               this.newIconIconURL = this.iconData[target]['iconUrl'];
               this.newIconBgColor = this.iconData[target]['bgColor'];
               this.newIconShowIconCase = this.iconData[target]['showIconCase'];
@@ -223,7 +223,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   addNewIcon(): void {
     const newIcon = {
         name: this.newIconTitle,
-        url: 'http://' + this.newIconURL,
+        url: (this.newIconURL.trim().indexOf('http://') === 0 || this.newIconURL.trim().indexOf('https://') === 0) ? this.newIconURL.trim() : 'http://' + this.newIconURL.trim(), // 'http://' + this.newIconURL,
         iconUrl: this.newIconIconURL,
         bgColor: this.newIconBgColor,
         corner: 0,
