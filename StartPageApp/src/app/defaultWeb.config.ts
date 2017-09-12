@@ -16,30 +16,6 @@ export const defaultWebsite = [
     showIconCase: true
   },
   {
-    name: 'Android',
-    url: 'http://www.android.com',
-    iconUrl: '../assets/icon-alt/Android.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Apple',
-    url: 'http://www.apple.com',
-    iconUrl: '../assets/icon-alt/Apple.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'App Store',
-    url: 'http://itunes.apple.com',
-    iconUrl: '../assets/icon-alt/Appstore.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
     name: 'AWS',
     url: 'http://aws.amazon.com',
     iconUrl: '../assets/icon-alt/AWS.png',
@@ -64,41 +40,9 @@ export const defaultWebsite = [
     showIconCase: true
   },
   {
-    name: 'CloudApp',
-    url: 'http://www.getcloudapp.com',
-    iconUrl: '../assets/icon-alt/Cloudapp.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
     name: 'CSS3',
     url: 'http://www.css3.info',
     iconUrl: '../assets/icon-alt/CSS3.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'DeviantArt',
-    url: 'http://www.deviantart.com',
-    iconUrl: '../assets/icon-alt/Deviantart.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Digg',
-    url: 'http://digg.com/',
-    iconUrl: '../assets/icon-alt/Digg.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Dribble',
-    url: 'http://dribbble.com/',
-    iconUrl: '../assets/icon-alt/Dribble.png',
     bgColor: '',
     corner: 0,
     showIconCase: true
@@ -144,14 +88,6 @@ export const defaultWebsite = [
     showIconCase: true
   },
   {
-    name: 'Firefox',
-    url: 'http://www.mozilla.org/en-US/firefox',
-    iconUrl: '../assets/icon-alt/Firefox.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
     name: 'Flickr',
     url: 'http://www.flickr.com',
     iconUrl: '../assets/icon-alt/Flickr.png',
@@ -176,25 +112,9 @@ export const defaultWebsite = [
     showIconCase: true
   },
   {
-    name: 'Google Chrome',
-    url: 'http://www.google.com/chrome/browser/desktop/index.html',
-    iconUrl: '../assets/icon-alt/Google\ Chrome.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
     name: 'Google Drive',
     url: 'http://www.google.com/drive',
     iconUrl: '../assets/icon-alt/Google\ Drive.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Google Play',
-    url: 'http://play.google.com/store',
-    iconUrl: '../assets/icon-alt/Google\ Play.png',
     bgColor: '',
     corner: 0,
     showIconCase: true
@@ -232,73 +152,9 @@ export const defaultWebsite = [
     showIconCase: true
   },
   {
-    name: 'iTunes',
-    url: 'http://www.apple.com/itunes',
-    iconUrl: '../assets/icon-alt/iTunes.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Kickstarter',
-    url: 'http://www.kickstarter.com/',
-    iconUrl: '../assets/icon-alt/Kickstarter.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Lastfm',
-    url: 'http://www.last.fm/',
-    iconUrl: '../assets/icon-alt/Lastfm.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Line',
-    url: 'http://line.me',
-    iconUrl: '../assets/icon-alt/Line.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
     name: 'LinkedIn',
     url: 'http://www.linkedin.com',
     iconUrl: '../assets/icon-alt/LinkedIn.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'MSN',
-    url: 'http://www.msn.com',
-    iconUrl: '../assets/icon-alt/MSN.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'MySpace',
-    url: 'http://myspace.com',
-    iconUrl: '../assets/icon-alt/MySpace.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Opera',
-    url: 'http://www.opera.com',
-    iconUrl: '../assets/icon-alt/Opera.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Outlook',
-    url: 'http://outlook.live.com',
-    iconUrl: '../assets/icon-alt/Outlook.png',
     bgColor: '',
     corner: 0,
     showIconCase: true
@@ -336,14 +192,6 @@ export const defaultWebsite = [
     showIconCase: true
   },
   {
-    name: 'PlayStation',
-    url: 'http://www.playstation.com',
-    iconUrl: '../assets/icon-alt/Playstation.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
     name: 'Reddit',
     url: 'http://www.reddit.com',
     iconUrl: '../assets/icon-alt/Reddit.png',
@@ -360,22 +208,6 @@ export const defaultWebsite = [
     showIconCase: true
   },
   {
-    name: 'Safari',
-    url: 'http://www.apple.com/safari',
-    iconUrl: '../assets/icon-alt/Safari.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Skype',
-    url: 'http://www.skype.com',
-    iconUrl: '../assets/icon-alt/Skype.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
     name: 'Slack',
     url: 'http://slack.com',
     iconUrl: '../assets/icon-alt/Slack.png',
@@ -387,14 +219,6 @@ export const defaultWebsite = [
     name: 'Snapchat',
     url: 'http://www.snapchat.com',
     iconUrl: '../assets/icon-alt/Snapchat.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'SoundCloud',
-    url: 'http://soundcloud.com',
-    iconUrl: '../assets/icon-alt/Soundcloud.png',
     bgColor: '',
     corner: 0,
     showIconCase: true
@@ -440,14 +264,6 @@ export const defaultWebsite = [
     showIconCase: true
   },
   {
-    name: 'Uber',
-    url: 'http://www.uber.com',
-    iconUrl: '../assets/icon-alt/Uber.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
     name: 'Viber',
     url: 'http://www.viber.com',
     iconUrl: '../assets/icon-alt/Viber.png',
@@ -488,73 +304,9 @@ export const defaultWebsite = [
     showIconCase: true
   },
   {
-    name: 'WeChat',
-    url: 'http://web.wechat.com',
-    iconUrl: '../assets/icon-alt/Wechat.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'WhatsApp',
-    url: 'http://www.whatsapp.com',
-    iconUrl: '../assets/icon-alt/Whatsapp.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Windows Store',
-    url: 'http://www.microsoft.com/store/apps',
-    iconUrl: '../assets/icon-alt/Windows\ Store.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Windows',
-    url: 'http://www.microsoft.com/en-us/windows',
-    iconUrl: '../assets/icon-alt/Windows.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'WordPress',
-    url: 'http://wordpress.com',
-    iconUrl: '../assets/icon-alt/WordPress.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'World Wildlife Fund',
-    url: 'http://www.worldwildlife.org',
-    iconUrl: '../assets/icon-alt/WWF.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'xbox',
-    url: 'http://www.xbox.com',
-    iconUrl: '../assets/icon-alt/Xbox.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
     name: 'Yahoo',
     url: 'http://www.yahoo.com',
     iconUrl: '../assets/icon-alt/Yahoo.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
-  {
-    name: 'Yammer',
-    url: 'http://www.yammer.com',
-    iconUrl: '../assets/icon-alt/Yammer.png',
     bgColor: '',
     corner: 0,
     showIconCase: true
@@ -574,14 +326,6 @@ export const defaultWebsite = [
     bgColor: '',
     corner: 0,
     showIconCase: true
-  },
-  {
-    name: 'Zynga',
-    url: 'http://www.zynga.com',
-    iconUrl: '../assets/icon-alt/Zynga.png',
-    bgColor: '',
-    corner: 0,
-    showIconCase: true
-  },
+  }
 
 ];
